@@ -172,11 +172,11 @@ ul {
 }
 
 .socials {
-  margin-top: auto;
+  margin-top: 18px;
   display: flex;
   gap: 14px;
   flex-wrap: wrap;
-  padding-top: 26px;
+  padding-top: 0;
 }
 
 .socials a {
@@ -189,7 +189,7 @@ ul {
 }
 
 .version-switch {
-  margin-top: 18px;
+  margin-top: auto;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -211,6 +211,113 @@ ul {
   padding: 7px 10px;
   font-family: var(--font-mono);
   font-size: 0.75rem;
+}
+
+@media (max-height: 900px) and (min-width: 1025px) {
+  .sidebar {
+    padding: 58px 0 24px;
+  }
+
+  .brand {
+    font-size: clamp(1.45rem, 2.2vw, 1.95rem);
+  }
+
+  .role {
+    margin-top: 10px;
+    font-size: 0.9rem;
+  }
+
+  .intro-copy {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    line-height: 1.45;
+    max-width: 34ch;
+  }
+
+  .section-nav {
+    margin-top: 24px;
+    gap: 8px;
+  }
+
+  .section-nav a {
+    font-size: 0.74rem;
+    letter-spacing: 0.06em;
+  }
+
+  .sidebar-actions {
+    margin-top: 20px;
+    gap: 8px;
+  }
+
+  .button {
+    padding: 8px 12px;
+    font-size: 0.72rem;
+  }
+
+  .socials {
+    margin-top: 12px;
+    gap: 10px;
+  }
+
+  .socials a {
+    font-size: 0.86rem;
+  }
+
+  .version-switch {
+    margin-top: auto;
+    gap: 8px;
+  }
+
+  .version-switch label,
+  .version-switch select {
+    font-size: 0.68rem;
+  }
+}
+
+@media (max-height: 760px) and (min-width: 1025px) {
+  .sidebar {
+    padding: 36px 0 16px;
+  }
+
+  .brand {
+    font-size: 1.35rem;
+  }
+
+  .role {
+    font-size: 0.82rem;
+  }
+
+  .intro-copy {
+    font-size: 0.82rem;
+    margin-top: 8px;
+    line-height: 1.4;
+  }
+
+  .section-nav {
+    margin-top: 16px;
+  }
+
+  .section-nav a::before {
+    width: 20px;
+  }
+
+  .section-nav a:hover::before,
+  .section-nav a.active::before {
+    width: 38px;
+  }
+
+  .button {
+    padding: 7px 10px;
+    font-size: 0.66rem;
+  }
+
+  .socials a {
+    font-size: 0.8rem;
+  }
+
+  .version-switch select {
+    padding: 5px 8px;
+  }
 }
 
 .content {
