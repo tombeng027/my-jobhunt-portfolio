@@ -37,9 +37,16 @@
         </div>
         <div class="hero-visual" aria-hidden="true">
           <div class="code-sample">
-            <pre><code>// Example: deploy with Docker + Terraform
-const app = express();
-app.listen(3000);
+            <pre><code>// Example: implementation configuration
+const workflowConfig = {
+  environment: 'UAT',
+  integrations: ['REST', 'SOAP'],
+  validation: ['schema-check', 'data-mapping', 'regression-test'],
+  rollout: 'crawl-walk-run',
+};
+
+validateConfiguration(workflowConfig);
+promoteRelease('production');
 </code></pre>
           </div>
         </div>
