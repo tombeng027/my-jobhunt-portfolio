@@ -3,6 +3,7 @@ import './style.css'
 const navToggle = document.querySelector('.nav-toggle')
 const navList = document.querySelector('#navList')
 const yearEl = document.querySelector('#year')
+const versionSelect = document.querySelector('#versionSelect')
 const navLinks = navList ? Array.from(navList.querySelectorAll('a')) : []
 const sections = Array.from(document.querySelectorAll('main .section'))
 
@@ -46,6 +47,20 @@ function initSectionObserver() {
   })
 }
 
+function initVersionSwitch() {
+  if (!versionSelect) return
+
+  versionSelect.addEventListener('change', () => {
+    const selected = versionSelect.value
+    if (selected === 'v1') {
+      window.location.href = './version-1.html'
+      return
+    }
+
+    window.location.href = './'
+  })
+}
+
 function init() {
   setCurrentYear()
   navToggle?.addEventListener('click', toggleNav)
@@ -55,6 +70,7 @@ function init() {
 
   if (sections[0]) setActiveSection(sections[0].id)
   initSectionObserver()
+  initVersionSwitch()
 }
 
 init()

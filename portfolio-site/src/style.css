@@ -185,6 +185,31 @@ ul {
   color: var(--heading);
 }
 
+.version-switch {
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.version-switch label {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.version-switch select {
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--heading);
+  border-radius: 6px;
+  padding: 7px 10px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
 .content {
   padding: 92px 0 72px;
 }
@@ -389,6 +414,10 @@ h2 {
   .socials {
     margin-top: 22px;
     padding-top: 0;
+  }
+
+  .version-switch {
+    margin-top: 14px;
   }
 
   .content {
