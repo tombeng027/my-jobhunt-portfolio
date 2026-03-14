@@ -18,14 +18,16 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
+        working-directory: portfolio-site
         run: npm ci
 
       - name: Build
+        working-directory: portfolio-site
         run: npm run build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v5
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: ./portfolio-site/dist
           publish_branch: gh-pages
