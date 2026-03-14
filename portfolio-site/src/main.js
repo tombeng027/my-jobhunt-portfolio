@@ -3,6 +3,8 @@ import './style.css'
 const navToggle = document.querySelector('.nav-toggle')
 const navList = document.querySelector('#navList')
 const yearEl = document.querySelector('#year')
+const navLinks = navList ? Array.from(navList.querySelectorAll('a')) : []
+const sections = Array.from(document.querySelectorAll('main .section'))
 
 function setCurrentYear() {
   if (yearEl) yearEl.textContent = new Date().getFullYear()
@@ -12,46 +14,47 @@ function toggleNav() {
   if (!navToggle || !navList) return
   const expanded = navToggle.getAttribute('aria-expanded') === 'true'
   navToggle.setAttribute('aria-expanded', String(!expanded))
-  navList.classList.toggle('is-open')
+  navList.classList.toggle('is-open', !expanded)
 }
 
-function setActiveFilter(button) {
-  document.querySelectorAll('.filter-button').forEach((btn) => {
-    btn.classList.toggle('active', btn === button)
+function setActiveSection(id) {
+  navLinks.forEach((link) => {
+    const active = link.getAttribute('href') === `#${id}`
+    link.classList.toggle('active', active)
   })
 }
 
-function filterProjects(category) {
-  const projects = document.querySelectorAll('.project')
-  projects.forEach((project) => {
-    const projectCategory = project.getAttribute('data-category') ?? 'all'
-    const isVisible = category === 'all' || projectCategory === category
-    project.style.display = isVisible ? '' : 'none'
-  })
-}
+function initSectionObserver() {
+  if (!sections.length || !navLinks.length) return
 
-function initProjectFilters() {
-  const buttons = document.querySelectorAll('.filter-button')
-  if (!buttons.length) return
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return
+        setActiveSection(entry.target.id)
+      })
+    },
+    {
+      root: null,
+      rootMargin: '-35% 0px -45% 0px',
+      threshold: 0.01,
+    },
+  )
 
-  buttons.forEach((button) => {
-    button.addEventListener('click', () => {
-      const category = button.getAttribute('data-filter') ?? 'all'
-      setActiveFilter(button)
-      filterProjects(category)
-    })
+  sections.forEach((section) => {
+    observer.observe(section)
   })
 }
 
 function init() {
   setCurrentYear()
   navToggle?.addEventListener('click', toggleNav)
-  navList?.querySelectorAll('a').forEach((link) => {
+  navLinks.forEach((link) => {
     link.addEventListener('click', () => navList.classList.remove('is-open'))
   })
 
-  initProjectFilters()
-  filterProjects('all')
+  if (sections[0]) setActiveSection(sections[0].id)
+  initSectionObserver()
 }
 
 init()

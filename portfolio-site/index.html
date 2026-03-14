@@ -4,307 +4,162 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fullstack Portfolio</title>
+    <title>Norbert Briones • Portfolio v2</title>
   </head>
   <body>
-    <header class="site-header">
-      <nav class="nav">
-        <a class="logo" href="#top">Norbert M. Briones</a>
-        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
-        <ul class="nav-list" id="navList">
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="./documentation.html">Docs</a></li>
-          <li><a class="button" href="https://drive.google.com/file/d/1XqybU_fdjUbyekgf5-9qWbTz32hhNJF1/view?usp=sharing" target="_blank" rel="noreferrer">Resume (Drive)</a></li>
-        </ul>
-      </nav>
-    </header>
+    <div class="layout" id="top">
+      <aside class="sidebar">
+        <a class="brand" href="#top">Norbert M. Briones</a>
+        <p class="role">Senior Configuration Engineer • Full-Stack Developer</p>
+        <p class="intro-copy">
+          I design configuration-first systems, integration workflows, and production-ready delivery pipelines for enterprise teams.
+        </p>
 
-    <main class="page" id="top">
-      <section class="hero" id="hero">
-        <div class="hero-content">
-          <h1>Senior Configuration Engineer | Full-Stack Developer</h1>
-          <p>Results-driven Senior Configuration Engineer with 10 years of experience in system architecture, API orchestration, and full-stack software development. Expert in bridging the gap between complex client requirements and technical implementation within the Insurtech space.</p>
-          <div class="hero-actions">
-            <a class="button" href="#projects">View Featured Work</a>
-            <a class="button button-secondary" href="#contact">Get in touch</a>
-          </div>
-        </div>
-        <div class="hero-visual" aria-hidden="true">
-          <div class="code-sample">
-            <pre><code>// Example: implementation configuration
-const workflowConfig = {
-  environment: 'UAT',
-  integrations: ['REST', 'SOAP'],
-  validation: ['schema-check', 'data-mapping', 'regression-test'],
-  rollout: 'crawl-walk-run',
-};
+        <button class="nav-toggle" aria-label="Toggle section navigation" aria-expanded="false">Sections</button>
 
-validateConfiguration(workflowConfig);
-promoteRelease('production');
-</code></pre>
-          </div>
-        </div>
-      </section>
+        <nav class="section-nav" aria-label="Primary" id="navList">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
+        </nav>
 
-      <section class="section" id="about">
-        <div class="section-header">
-          <h2>About</h2>
-          <p>I build solutions that are both maintainable and production-ready, focusing on configuration-driven delivery, automation, and clear technical documentation. My work is designed for teams that need repeatable deployments and quick onboarding.</p>
+        <div class="sidebar-actions">
+          <a class="button" href="https://drive.google.com/file/d/1XqybU_fdjUbyekgf5-9qWbTz32hhNJF1/view?usp=sharing" target="_blank" rel="noreferrer">Resume</a>
+          <a class="button button-outline" href="./documentation.html">Docs</a>
         </div>
-        <div class="grid two">
-          <div>
-            <h3>Core strengths</h3>
-            <ul>
-              <li>System configuration & workflow design (Crawl, Walk, Run delivery model)</li>
-              <li>API integration (REST/SOAP), UAT/Production deployments</li>
-              <li>Full-stack development (Java, JavaScript, Electron JS)</li>
-              <li>Automated testing and configuration validation</li>
-            </ul>
-          </div>
-          <div>
-            <h3>Why it matters</h3>
-            <p>I guide enterprise clients through structured implementation phases, delivering stable systems while minimizing manual configuration overhead.</p>
-            <p>Strong technical delivery ensures clients can scale quickly without sacrificing stability or compliance.</p>
-          </div>
-        </div>
-      </section>
 
-      <section class="section" id="skills">
-        <div class="section-header">
-          <h2>Skills</h2>
-          <p>Technical capabilities that drive reliable delivery and maintainable systems.</p>
+        <div class="socials">
+          <a href="https://github.com/tombeng027" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/norbert-briones-17996899" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="mailto:norbertbriones@gmail.com">Email</a>
         </div>
-        <div class="skill-grid">
-          <div class="skill">
-            <h3>Systems</h3>
-            <ul>
-              <li>System Configuration & Workflow Design</li>
-              <li>API Integration (REST/SOAP)</li>
-              <li>UAT/Production Deployment</li>
-              <li>Automated Testing</li>
-            </ul>
-          </div>
-          <div class="skill">
-            <h3>Development</h3>
-            <ul>
-              <li>Java, JavaScript (ES6+), Electron JS</li>
-              <li>HTML5, CSS3, Apache POI</li>
-              <li>Legacy modernization & migration</li>
-              <li>Build systems and developer tooling</li>
-            </ul>
-          </div>
-          <div class="skill">
-            <h3>Data</h3>
-            <ul>
-              <li>SQL (PostgreSQL/MySQL)</li>
-              <li>NoSQL (MariaDB/MongoDB)</li>
-              <li>Studio 3T, HeidiSQL</li>
-              <li>Data integration & pipelines</li>
-            </ul>
-          </div>
-          <div class="skill">
-            <h3>Tools</h3>
-            <ul>
-              <li>JIRA, Glassfish, Jasper Reports</li>
-              <li>VSCode, Git</li>
-              <li>AI-assisted development (Gemini, ChatGPT, Codex)</li>
-              <li>Prompt engineering for code optimization & documentation</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+      </aside>
 
-      <section class="section" id="projects">
-        <div class="section-header">
-          <h2>Projects</h2>
-          <p>A selection of work that demonstrates full‑stack and infrastructure experience.</p>
-        </div>
-        <div class="project-filters" aria-label="Project filters">
-          <span>Filter:</span>
-          <button type="button" class="filter-button active" data-filter="all">All</button>
-          <button type="button" class="filter-button" data-filter="fullstack">Full-stack</button>
-          <button type="button" class="filter-button" data-filter="infra">Infrastructure</button>
-          <button type="button" class="filter-button" data-filter="tooling">Tooling</button>
-        </div>
-        <div class="project-grid">
-          <article class="project" data-category="tooling">
-            <h3>Portfolio Site</h3>
-            <p>This portfolio is a Vite-powered static site that showcases full-stack and configuration work.</p>
-            <ul>
-              <li>Built with Vite, vanilla JS, and modern responsive styles.</li>
-              <li>Includes filters, documentation page, and deployment pipeline.</li>
-              <li>Serves as a living example of end-to-end project delivery.</li>
-            </ul>
-            <div class="project-links">
-              <a href="https://github.com/tombeng027/my-jobhunt-portfolio" class="button button-small" aria-label="View repository">Repo</a>
-              <a href="./documentation.html" class="button button-small button-secondary" aria-label="View docs">Docs</a>
+      <main class="content">
+        <section class="section" id="about">
+          <h2><span class="section-index">01.</span> About</h2>
+          <p>
+            Results-driven Senior Configuration Engineer with 10 years of experience in system architecture, API orchestration, and full-stack software development. I focus on implementation models that scale from proof-of-concept through production with minimal friction.
+          </p>
+          <p>
+            My core strength is translating complex business requirements into technical delivery plans, then driving deployment with clear validation checkpoints and reusable configuration patterns.
+          </p>
+        </section>
+
+        <section class="section" id="skills">
+          <h2><span class="section-index">02.</span> Skills</h2>
+          <div class="chip-grid">
+            <span class="chip">System Configuration</span>
+            <span class="chip">REST &amp; SOAP Integrations</span>
+            <span class="chip">UAT &amp; Production Delivery</span>
+            <span class="chip">Java / JavaScript / Electron</span>
+            <span class="chip">SQL / MariaDB / MongoDB</span>
+            <span class="chip">Workflow Automation</span>
+            <span class="chip">Technical Documentation</span>
+            <span class="chip">JIRA / Git / VS Code</span>
+          </div>
+        </section>
+
+        <section class="section" id="projects">
+          <h2><span class="section-index">03.</span> Projects</h2>
+
+          <article class="project-card">
+            <div class="project-head">
+              <h3>Portfolio Site</h3>
+              <div class="project-links">
+                <a href="https://github.com/tombeng027/my-jobhunt-portfolio" target="_blank" rel="noreferrer">Repo</a>
+                <a href="./documentation.html">Docs</a>
+              </div>
             </div>
-          </article>
-          <article class="project" data-category="infra">
-            <h3>Insurtech Knowledge Engineering & Implementation</h3>
-            <p>Pioneer configurator role capturing legacy Benekiva logic and building modular templates for carrier onboarding.</p>
+            <p>This portfolio is a Vite-powered static site focused on clean information architecture, readable technical storytelling, and automated deployment.</p>
             <ul>
-              <li>Authored technical documentation for legacy system architecture and business logic.</li>
-              <li>Designed a modular configuration template + reusable API mapping library (REST/SOAP).</li>
-              <li>Preserved 100% of legacy knowledge and cut POC time-to-live from 4 months to 2.5 months.</li>
+              <li>Responsive layout with section-based navigation.</li>
+              <li>GitHub Pages deployment through GitHub Actions.</li>
+              <li>Designed as a living artifact for job applications.</li>
             </ul>
           </article>
-          <article class="project" data-category="tooling">
-            <h3>Enterprise Digitization Suite (Electron JS & Java)</h3>
-            <p>Cross-platform desktop application replacing a legacy Visual Basic system for bank branch digitization.</p>
+
+          <article class="project-card">
+            <div class="project-head">
+              <h3>Insurtech Knowledge Engineering &amp; Implementation</h3>
+            </div>
+            <p>Built reusable implementation templates and API mapping patterns to accelerate onboarding across insurance workflows.</p>
             <ul>
-              <li>Integrated Apache POI for complex Excel reporting.</li>
-              <li>Built local sync with MariaDB for offline field deployments.</li>
-              <li>Deployed to 10+ branches, increasing data encoding accuracy by 25%.</li>
+              <li>Captured legacy architecture and translated it into modular, repeatable configurations.</li>
+              <li>Reduced POC time-to-live from 4 months to 2.5 months.</li>
+              <li>Supported production stabilization for high-impact enterprise accounts.</li>
             </ul>
           </article>
-          <article class="project" data-category="tooling">
-            <h3>AI-Enhanced Development Workflow</h3>
-            <p>Integrated LLM tooling (Gemini/ChatGPT) into CI/CD for automated docs and unit-test generation.</p>
+
+          <article class="project-card">
+            <div class="project-head">
+              <h3>Enterprise Digitization Suite</h3>
+            </div>
+            <p>Rebuilt a legacy Visual Basic flow using Electron JS and Java for branch-level operations and offline resilience.</p>
             <ul>
-              <li>Developed prompt libraries for standardized requirement translations.</li>
-              <li>Reduced syntax-related deployment errors via automated checks.</li>
-              <li>Increased documentation velocity and team consistency.</li>
+              <li>Integrated OCR, image handling, and structured data workflows.</li>
+              <li>Used Apache POI for advanced Excel reporting automation.</li>
+              <li>Deployed across multiple high-security financial branches.</li>
             </ul>
           </article>
-        </div>
-      </section>
+        </section>
 
-      <section class="section" id="experience">
-        <div class="section-header">
-          <h2>Experience</h2>
-          <p>Professional roles demonstrating full-stack delivery, configuration engineering, and operational excellence.</p>
-        </div>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <h3>Senior Configuration Engineer</h3>
-              <span class="timeline-meta">Eclaro International (Assigned to Benekiva) · Sep 2020 – Present</span>
-              <ul>
-                <li>Served as the foundational configuration lead for Benekiva’s initial client roster, building core system setups for major insurance providers.</li>
-                <li>Directed clients through the “Crawl, Walk, Run” methodology from POC to UAT and production.</li>
-                <li>Collaborated with BAs and developers to optimize legacy business processes and implement technical workarounds.</li>
-                <li>Acted as the high-tier “firefighter” for accounts like Lincoln Financial and USAA, resolving complex production issues quickly.</li>
-                <li>Led configuration planning sessions and translated business needs into technical specs and deliverables.</li>
-              </ul>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <h3>Senior Programmer</h3>
-              <span class="timeline-meta">Software Ventures International · Apr 2018 – Sep 2020</span>
-              <ul>
-                <li>Designed and built a modern Electron JS data encoding tool to replace a legacy Visual Basic application.</li>
-                <li>Engineered an end-to-end digitization pipeline integrating OCR, image processing, and MariaDB via REST APIs.</li>
-                <li>Delivered deployments for major clients including Landbank and BPI.</li>
-                <li>Promoted from trainee to senior within 2 years through consistent delivery and technical ownership.</li>
-                <li>Mentored junior developers and supported on-site deployments.</li>
-              </ul>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <h3>Technical Support Representative (AT&amp;T Pre-Install)</h3>
-              <span class="timeline-meta">Convergys Philippines · 2016 – 2017</span>
-              <ul>
-                <li>Diagnosed technical issues using targeted, systematic questioning to uncover the right details.</li>
-                <li>Maintained calm professionalism and de-escalated high-pressure situations with frustrated customers.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
+        <section class="section" id="experience">
+          <h2><span class="section-index">04.</span> Experience</h2>
+          <div class="timeline">
+            <article class="timeline-item">
+              <p class="timeline-period">2020 — Present</p>
+              <div>
+                <h3>Senior Configuration Engineer • Eclaro International (Benekiva)</h3>
+                <p>Led configuration strategy and execution from POC to UAT and production using the Crawl-Walk-Run model.</p>
+                <ul>
+                  <li>Built core setups and integration mappings for major insurance providers.</li>
+                  <li>Worked across BA and engineering teams to translate business logic into technical delivery plans.</li>
+                  <li>Resolved high-priority production incidents and reduced delivery risk.</li>
+                </ul>
+              </div>
+            </article>
 
-      <section class="section" id="clients">
-        <div class="section-header">
-          <h2>Selected Clients</h2>
-          <p>Representative clients served through configuration and implementation work.</p>
-        </div>
-        <div class="grid two">
-          <div>
-            <h3>Financial Institutions</h3>
-            <ul>
-              <li>Landbank</li>
-              <li>BPI (Bank of the Philippine Islands)</li>
-            </ul>
-          </div>
-          <div>
-            <h3>Insurtech</h3>
-            <ul>
-              <li>USAA</li>
-              <li>Lincoln Financial Group</li>
-              <li>Wellabe (American Enterprise)</li>
-              <li>Homesteaders Life (HLC)</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+            <article class="timeline-item">
+              <p class="timeline-period">2018 — 2020</p>
+              <div>
+                <h3>Senior Programmer • Software Ventures International</h3>
+                <p>Delivered a modern cross-platform toolchain for enterprise digitization and operational workflows.</p>
+                <ul>
+                  <li>Replaced legacy applications with Electron + Java stack implementations.</li>
+                  <li>Built data-sync and API layers for distributed branch deployments.</li>
+                  <li>Mentored junior developers and supported client-side rollout execution.</li>
+                </ul>
+              </div>
+            </article>
 
-      <section class="section" id="achievements">
-        <div class="section-header">
-          <h2>Key Achievements</h2>
-          <p>Highlights that exemplify impact in modernization, efficiency, and deployment.</p>
-        </div>
-        <div class="grid two">
-          <div>
-            <h3>Modernization</h3>
-            <p>Transitioned a critical business tool from Visual Basic to Electron JS, improving processing speed and maintainability.</p>
+            <article class="timeline-item">
+              <p class="timeline-period">2016 — 2017</p>
+              <div>
+                <h3>Technical Support Representative • Convergys</h3>
+                <p>Handled complex troubleshooting for AT&amp;T pre-installation issues with strong escalation discipline and client communication.</p>
+              </div>
+            </article>
           </div>
-          <div>
-            <h3>Efficiency</h3>
-            <p>Redesigned onboarding workflows for Benekiva clients, reducing manual configuration time by 30%.</p>
-          </div>
-          <div>
-            <h3>Strategy</h3>
-            <p>Led on-site deployments of digitization pipelines across multiple high-security financial locations.</p>
-          </div>
-          <div>
-            <h3>Impact</h3>
-            <p>Enabled faster POCs and stabilized production rollout for major insurance carriers.</p>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <section class="section" id="contact">
-        <div class="section-header">
-          <h2>Contact</h2>
-          <p>Let’s connect — I’m open to roles where I can drive end-to-end delivery.</p>
-        </div>
-        <div class="contact-grid">
-          <div class="contact-card">
-            <h3>Location</h3>
-            <p>Caloocan City, Philippines</p>
+        <section class="section" id="contact">
+          <h2><span class="section-index">05.</span> Contact</h2>
+          <p>I’m open to roles focused on implementation engineering, full-stack development, and configuration-led delivery.</p>
+          <div class="contact-list">
+            <a href="mailto:norbertbriones@gmail.com">norbertbriones@gmail.com</a>
+            <a href="tel:+639055573205">+63 905 557 3205</a>
+            <span>Caloocan City, Philippines</span>
           </div>
-          <div class="contact-card">
-            <h3>Email</h3>
-            <p><a href="mailto:norbertbriones@gmail.com">norbertbriones@gmail.com</a></p>
-          </div>
-          <div class="contact-card">
-            <h3>Phone</h3>
-            <p><a href="tel:+639055573205">+63 905 557 3205</a></p>
-          </div>
-          <div class="contact-card">
-            <h3>LinkedIn</h3>
-            <p><a href="https://www.linkedin.com/in/norbert-briones-17996899" target="_blank" rel="noreferrer">linkedin.com/in/norbert-briones-17996899</a></p>
-          </div>
-          <div class="contact-card">
-            <h3>GitHub</h3>
-            <p><a href="https://github.com/tombeng027" target="_blank" rel="noreferrer">github.com/tombeng027</a></p>
-          </div>
-        </div>
-      </section>
-    </main>
+        </section>
 
-    <footer class="site-footer">
-      <span>© <span id="year"></span> Norbert M. Briones. Built with Vite.</span>
-    </footer>
+        <footer class="site-footer">
+          <span>© <span id="year"></span> Norbert M. Briones • Version 2 Concept</span>
+        </footer>
+      </main>
+    </div>
 
     <script type="module" src="/src/main.js"></script>
   </body>
