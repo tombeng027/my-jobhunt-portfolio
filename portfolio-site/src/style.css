@@ -23,11 +23,12 @@ body {
 }
 
 body {
-  min-height: 100vh;
+  height: 100vh;
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-sans);
   line-height: 1.65;
+  overflow: hidden;
 }
 
 a {
@@ -47,23 +48,25 @@ ul {
   max-width: 1220px;
   margin: 0 auto;
   padding: 0 28px;
+  height: 100vh;
   display: grid;
   grid-template-columns: minmax(280px, 360px) minmax(0, 1fr);
   gap: 72px;
 }
 
 .sidebar {
-  min-height: 100vh;
+  height: 100vh;
   position: sticky;
   top: 0;
   padding: 88px 0 48px;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .brand {
   color: var(--heading);
-  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-size: clamp(1.7rem, 3vw, 2.3rem);
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.02em;
@@ -211,7 +214,10 @@ ul {
 }
 
 .content {
+  height: 100vh;
   padding: 92px 0 72px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .section {
@@ -375,15 +381,24 @@ h2 {
 }
 
 @media (max-width: 1024px) {
+  body {
+    height: auto;
+    min-height: 100vh;
+    overflow: auto;
+  }
+
   .layout {
+    height: auto;
     grid-template-columns: 1fr;
     gap: 0;
   }
 
   .sidebar {
     position: static;
+    height: auto;
     min-height: auto;
     padding: 56px 0 18px;
+    overflow: visible;
   }
 
   .intro-copy {
@@ -421,7 +436,9 @@ h2 {
   }
 
   .content {
+    height: auto;
     padding: 12px 0 52px;
+    overflow: visible;
   }
 
   .section {
