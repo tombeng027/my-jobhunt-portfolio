@@ -140,6 +140,31 @@ ol {
   background: rgba(245, 245, 246, 0.1);
 }
 
+.docs-version-switch {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.docs-version-switch label {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.docs-version-switch select {
+  border: 1px solid var(--border);
+  background: var(--panel-2);
+  color: var(--heading);
+  border-radius: 6px;
+  padding: 7px 10px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
 .docs-content {
   padding: 88px 0 72px;
 }

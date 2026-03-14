@@ -25,6 +25,14 @@
           <a href="./">Back to Portfolio</a>
           <a href="https://github.com/tombeng027/my-jobhunt-portfolio" target="_blank" rel="noreferrer">Repository</a>
         </div>
+
+        <div class="docs-version-switch">
+          <label for="versionSelectDocs">Versions</label>
+          <select id="versionSelectDocs" aria-label="Select portfolio version">
+            <option value="v2" selected>Version 2</option>
+            <option value="v1">Version 1</option>
+          </select>
+        </div>
       </aside>
 
       <main class="docs-content">
@@ -94,6 +102,18 @@
     <script>
       const year = document.querySelector('#year');
       if (year) year.textContent = new Date().getFullYear();
+
+      const versionSelect = document.querySelector('#versionSelectDocs');
+      if (versionSelect) {
+        versionSelect.addEventListener('change', () => {
+          if (versionSelect.value === 'v1') {
+            window.location.href = './version-1.html';
+            return;
+          }
+
+          window.location.href = './';
+        });
+      }
     </script>
   </body>
 </html>
