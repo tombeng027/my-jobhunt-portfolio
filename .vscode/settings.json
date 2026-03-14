@@ -1,0 +1,12 @@
+{
+  // Use Git Bash as the default integrated terminal shell on Windows.
+  // If you don't have Git Bash installed yet, install Git for Windows:
+  // https://git-scm.com/download/win
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "terminal.integrated.profiles.windows": {
+    "Git Bash": {
+      "path": "C:\\Program Files\\Git\\bin\\bash.exe",
+      "args": ["--login", "-i"]
+    }
+  }
+}
