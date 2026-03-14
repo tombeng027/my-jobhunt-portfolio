@@ -3,102 +3,96 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Documentation • Portfolio</title>
+    <title>Documentation • Portfolio v2</title>
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    <link rel="stylesheet" crossorigin href="./assets/index-DndG1DTC.css">
+    <link rel="stylesheet" href="./documentation.css" />
   </head>
   <body>
-    <header class="site-header">
-      <nav class="nav">
-        <a class="logo" href="./">Norbert M. Briones</a>
-        <ul class="nav-list">
-          <li><a href="./">Home</a></li>
-          <li><a href="./documentation.html" aria-current="page">Docs</a></li>
-          <li><a href="./#projects">Projects</a></li>
-          <li><a href="./#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
+    <div class="docs-layout" id="top">
+      <aside class="docs-sidebar">
+        <a class="docs-brand" href="./">Norbert M. Briones</a>
+        <p class="docs-subtitle">Portfolio v2 Documentation</p>
 
-    <main class="page">
-      <section class="section">
-        <div class="section-header">
-          <h1>Portfolio Documentation</h1>
-          <p>This page explains why this portfolio exists, how it was built, and how to update it as you continue to grow.</p>
+        <nav class="docs-nav" aria-label="Documentation sections">
+          <a href="#overview">Overview</a>
+          <a href="#vision">Vision & Mission</a>
+          <a href="#build">How It Was Built</a>
+          <a href="#updates">Update Log</a>
+          <a href="#deploy">Deployment</a>
+        </nav>
+
+        <div class="docs-actions">
+          <a href="./">Back to Portfolio</a>
+          <a href="https://github.com/tombeng027/my-jobhunt-portfolio" target="_blank" rel="noreferrer">Repository</a>
         </div>
+      </aside>
 
-        <section class="section">
+      <main class="docs-content">
+        <section class="docs-section" id="overview">
+          <h1>Portfolio Documentation</h1>
+          <p>
+            This page explains the intent, architecture, and change history of this portfolio. It serves as a quick reference for future updates and
+            for employers who want to understand how the site is maintained.
+          </p>
+        </section>
+
+        <section class="docs-section" id="vision">
           <h2>Vision & Mission</h2>
-          <p>This portfolio is designed to showcase full-stack development and infrastructure configuration experience in a clean, copyable format that employers can quickly evaluate.</p>
+          <p>This portfolio is designed to showcase implementation engineering, full-stack capability, and configuration-first delivery experience.</p>
           <ul>
-            <li><strong>Vision:</strong> Present a polished, modern technical portfolio that feels like a real product.</li>
-            <li><strong>Mission:</strong> Help you land a web development role by highlighting technical depth (full-stack + config tooling) and delivering a deployable site.</li>
+            <li><strong>Vision:</strong> Present a modern, credible technical profile with clear project evidence.</li>
+            <li><strong>Mission:</strong> Help hiring teams evaluate delivery strength quickly through an accessible live portfolio.</li>
           </ul>
         </section>
 
-        <section class="section">
-          <h2>How it was built</h2>
+        <section class="docs-section" id="build">
+          <h2>How It Was Built</h2>
           <ul>
-            <li>**Vite (vanilla JS)** for a fast dev workflow and production build.</li>
-            <li>**Static HTML + CSS** for predictable rendering and easy customization.</li>
-            <li>**Modular structure**: the site is a single-page portfolio with a second documentation page.</li>
-            <li>**Responsive design** with a mobile-friendly nav and clean sections.</li>
-            <li>The source code is available in the repository: <a href="https://github.com/tombeng027/my-jobhunt-portfolio" target="_blank" rel="noreferrer">github.com/tombeng027/my-jobhunt-portfolio</a>.</li>
-            <li>The “Docs” button on the Portfolio Site project card links to this page.</li>
+            <li>Built with <strong>Vite (vanilla JS)</strong> for fast local development and lightweight production output.</li>
+            <li>Main portfolio uses a two-column v2 layout (sticky profile panel + section-based content flow).</li>
+            <li>Documentation page uses a dedicated static stylesheet (<code>public/documentation.css</code>) for reliable deployment.</li>
+            <li>Repository: <a href="https://github.com/tombeng027/my-jobhunt-portfolio" target="_blank" rel="noreferrer">github.com/tombeng027/my-jobhunt-portfolio</a>.</li>
           </ul>
         </section>
 
-        <section class="section">
-          <h2>How to update this portfolio</h2>
+        <section class="docs-section" id="updates">
+          <h2>How This Portfolio Was Updated</h2>
+          <p>The portfolio has been iteratively refined to align with current job-hunt goals and improve technical presentation.</p>
+
+          <h3>Recent update log</h3>
+          <ul>
+            <li>Created and published GitHub repository with GitHub Pages deployment workflow.</li>
+            <li>Fixed GitHub Pages issues (404, workflow location, action version, permissions, and Pages source setup).</li>
+            <li>Corrected production asset path handling for Vite by configuring relative base paths.</li>
+            <li>Integrated working project links for <strong>Repo</strong> and <strong>Docs</strong> in the portfolio project card.</li>
+            <li>Moved documentation into the public output path so it is deployable and accessible from the live site.</li>
+            <li>Replaced generic hero code sample with a configuration-focused snippet aligned to implementation work.</li>
+            <li>Created <strong>version-2</strong> branch and redesigned the main site into a minimalist two-column structure inspired by modern developer portfolios.</li>
+            <li>Updated navigation behavior to highlight active sections and support mobile section toggling.</li>
+            <li>Redesigned this documentation page to match v2 styling and removed fragile hashed asset dependencies.</li>
+          </ul>
+        </section>
+
+        <section class="docs-section" id="deploy">
+          <h2>Deployment</h2>
+          <p>The site deploys automatically via GitHub Actions to GitHub Pages.</p>
           <ol>
-            <li>Edit <code>index.html</code> to change the headline, sections, project cards, or contact details.</li>
-            <li>Update <code>src/style.css</code> to adjust styles, colors, and layout.</li>
-            <li>To add a new project card, copy an existing <code>&lt;article class="project"&gt;</code> block and update the content and links.</li>
-            <li>To add more documentation pages, create a new HTML file at the root of <code>portfolio-site/</code> and link to it from the navigation.</li>
+            <li>Push changes to the tracked branch.</li>
+            <li>Workflow builds the project with <code>npm run build</code>.</li>
+            <li>Generated files are published to <code>gh-pages</code>.</li>
           </ol>
+          <p>Live URL: <a href="https://tombeng027.github.io/my-jobhunt-portfolio/" target="_blank" rel="noreferrer">tombeng027.github.io/my-jobhunt-portfolio</a>.</p>
         </section>
 
-        <section class="section">
-          <h2>Deploying this portfolio</h2>
-          <p>The repository can be deployed to any static hosting provider. The quickest options are:</p>
-          <ul>
-            <li><strong>Vercel</strong> – connect the repo and deploy automatically</li>
-            <li><strong>Netlify</strong> – drag-and-drop <code>dist/</code> or connect via repo</li>
-            <li><strong>GitHub Pages</strong> – build to <code>dist/</code> and publish the output</li>
-          </ul>
-          <p>Run <code>npm run build</code> to generate the production output in <code>dist/</code>.</p>
-        </section>
+        <footer class="docs-footer">
+          <span>© <span id="year"></span> Norbert M. Briones • Portfolio Documentation</span>
+        </footer>
+      </main>
+    </div>
 
-        <section class="section">
-          <h2>How this portfolio was updated</h2>
-          <p>I built and refined this site to match my updated resume and job search goals.</p>
-          <ul>
-            <li>Updated my personal branding (name, title, location, contact info, resume link).</li>
-            <li>Refined the messaging so the hero and about sections complement each other (hero is the quick hook; about provides context and value).</li>
-            <li>Added a real “Portfolio Site” project entry so the repo/docs buttons point to something concrete.</li>
-            <li>Added client names and key achievements to highlight impact (Landbank, BPI, USAA, Lincoln, etc.).</li>
-            <li>Added a build/deploy pipeline via GitHub Actions and configured GitHub Pages workflow.</li>
-            <li>Improved the UI with responsive navigation, project filtering, and better text wrapping in contact cards.</li>
-          </ul>
-        </section>
-
-        <section class="section">
-          <h2>Next enhancements</h2>
-          <p>Some ideas you can add later to highlight more capabilities:</p>
-          <ul>
-            <li>Live project demos (hosted apps) with embedded iframes or screenshots.</li>
-            <li>A “Tech stack explorer” to show skill depth (e.g., radar chart, tag cloud).</li>
-            <li>Automated deployment docs (GitHub Actions pipeline, Terraform for infra).</li>
-            <li>Contact form (Formspree, Netlify Forms, or custom serverless endpoint).</li>
-          </ul>
-        </section>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <span>© <span id="year"></span> Norbert M. Briones. Built with Vite.</span>
-    </footer>
-
-    <script type="module" crossorigin src="./assets/index-D2XUQNOv.js"></script>
+    <script>
+      const year = document.querySelector('#year');
+      if (year) year.textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
