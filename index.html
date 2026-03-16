@@ -5,16 +5,16 @@
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Norbert Briones • Portfolio v2</title>
-    <script type="module" crossorigin src="./assets/index-DivW1d9l.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-C8F57rHB.css">
+    <script type="module" crossorigin src="./assets/index-ClJWCosB.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DyGI8DA1.css">
   </head>
   <body>
     <div class="layout" id="top">
       <aside class="sidebar">
         <a class="brand" href="#top">Norbert M. Briones</a>
-        <p class="role">Senior Configuration Engineer • Full-Stack Developer</p>
+        <p class="role">Senior Web Developer • AI-Augmented Backend &amp; Legacy Modernization</p>
         <p class="intro-copy">
-          I design configuration-first systems, integration workflows, and production-ready delivery pipelines for enterprise teams.
+          Independent problem-solver. I architect AI-augmented delivery systems and lead legacy-to-modern migrations for enterprise teams.
         </p>
 
         <button class="nav-toggle" aria-label="Toggle section navigation" aria-expanded="false">Sections</button>
@@ -28,8 +28,9 @@
         </nav>
 
         <div class="sidebar-actions">
-          <a class="button" href="https://drive.google.com/file/d/1XqybU_fdjUbyekgf5-9qWbTz32hhNJF1/view?usp=sharing" target="_blank" rel="noreferrer">Resume</a>
+           <a class="button" href="./resume.pdf" download="Norbert-Briones-Resume.pdf" type="application/pdf">Download Resume</a>
           <a class="button button-outline" href="./documentation.html">Docs</a>
+          <a class="button" href="./ai-refactor-showcase.html">AI Refactor Case Study</a>
           <a class="button" href="./ecommerce-showcase.html">E-commerce Showcase</a>
           <a class="button button-outline" href="./old-software-showcase.html">Old Software Showcase</a>
         </div>
@@ -53,29 +54,68 @@
         <section class="section" id="about">
           <h2><span class="section-index">01.</span> About</h2>
           <p>
-            Results-driven Senior Configuration Engineer with 10 years of experience in system architecture, API orchestration, and full-stack software development. I focus on implementation models that scale from proof-of-concept through production with minimal friction.
+            Senior Web Developer with 10+ years of experience in full-stack engineering, system architecture, and AI-augmented delivery workflows. I specialize in legacy-to-modern migrations — turning inherited systems into scalable, maintainable platforms without losing the domain knowledge that made them work.
           </p>
           <p>
-            My core strength is translating complex business requirements into technical delivery plans, then driving deployment with clear validation checkpoints and reusable configuration patterns.
+            My approach is hands-on and independent: I research, prototype, and ship end-to-end. Whether integrating LLM tooling to accelerate code generation, or mapping a legacy configuration system into a modern API-first architecture, I own the outcome from design through production.
           </p>
         </section>
 
         <section class="section" id="skills">
           <h2><span class="section-index">02.</span> Skills</h2>
-          <div class="chip-grid">
-            <span class="chip">System Configuration</span>
-            <span class="chip">REST &amp; SOAP Integrations</span>
-            <span class="chip">UAT &amp; Production Delivery</span>
-            <span class="chip">Java / JavaScript / Electron</span>
-            <span class="chip">SQL / MariaDB / MongoDB</span>
-            <span class="chip">Workflow Automation</span>
-            <span class="chip">Technical Documentation</span>
-            <span class="chip">JIRA / Git / VS Code</span>
+          <div class="skill-groups">
+            <div class="skill-group">
+              <h3 class="skill-group-title">Core Tech</h3>
+              <div class="chip-grid">
+                <span class="chip">PHP / Laravel</span>
+                <span class="chip">Node.js</span>
+                <span class="chip">Python</span>
+                <span class="chip">Java / JavaScript / Electron</span>
+                <span class="chip">SQL / MariaDB / MongoDB</span>
+                <span class="chip">REST &amp; SOAP APIs</span>
+                <span class="chip">HTML5 / CSS3</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <h3 class="skill-group-title">AI Integration</h3>
+              <div class="chip-grid">
+                <span class="chip">LLM API Integration</span>
+                <span class="chip">Prompt Engineering</span>
+                <span class="chip">AI-Augmented Code Generation</span>
+                <span class="chip">Workflow Automation</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <h3 class="skill-group-title">Legacy &amp; Enterprise</h3>
+              <div class="chip-grid">
+                <span class="chip">Legacy System Migration</span>
+                <span class="chip">System Configuration</span>
+                <span class="chip">UAT &amp; Production Delivery</span>
+                <span class="chip">Technical Diagnostics</span>
+                <span class="chip">Technical Documentation</span>
+                <span class="chip">JIRA / Git / VS Code</span>
+              </div>
+            </div>
           </div>
         </section>
 
         <section class="section" id="projects">
           <h2><span class="section-index">03.</span> Projects</h2>
+
+          <article class="project-card">
+            <div class="project-head">
+              <h3>AI Refactor Case Study — Legacy Field Mapper</h3>
+              <div class="project-links">
+                <a href="./ai-refactor-showcase.html">Case Study</a>
+              </div>
+            </div>
+            <p>Rebuilt a brittle, carrier-specific insurtech mapping module into a universal data-driven mapper using AI-assisted design and automated test generation.</p>
+            <ul>
+              <li>~80% reduction in mapper code per carrier (190 lines → ~40 lines).</li>
+              <li>Zero field-mapping incidents in 3 months post-refactor.</li>
+              <li>38% faster carrier onboarding — POC time dropped from 4 months to 2.5 months.</li>
+            </ul>
+          </article>
 
           <article class="project-card">
             <div class="project-head">
@@ -87,9 +127,9 @@
             </div>
             <p>This portfolio is a Vite-powered static site focused on clean information architecture, readable technical storytelling, and automated deployment.</p>
             <ul>
-              <li>Responsive layout with section-based navigation.</li>
-              <li>GitHub Pages deployment through GitHub Actions.</li>
-              <li>Designed as a living artifact for job applications.</li>
+              <li>Structured into 5 recruiter-facing sections plus 4 dedicated showcase and documentation routes.</li>
+              <li>Builds and deploys automatically to GitHub Pages through GitHub Actions.</li>
+              <li>Used as a living job-search artifact that now includes measurable AI, modernization, and delivery proof.</li>
             </ul>
           </article>
 
@@ -99,9 +139,9 @@
             </div>
             <p>Built reusable implementation templates and API mapping patterns to accelerate onboarding across insurance workflows.</p>
             <ul>
-              <li>Captured legacy architecture and translated it into modular, repeatable configurations.</li>
-              <li>Reduced POC time-to-live from 4 months to 2.5 months.</li>
-              <li>Supported production stabilization for high-impact enterprise accounts.</li>
+              <li>Preserved 100% of legacy workflow knowledge by translating undocumented architecture into modular, repeatable configurations.</li>
+              <li>Cut POC time-to-live by 38%, from 4 months to 2.5 months.</li>
+              <li>Supported production stabilization for high-impact enterprise insurance accounts.</li>
             </ul>
           </article>
 
@@ -111,9 +151,9 @@
             </div>
             <p>Rebuilt a legacy Visual Basic flow using Electron JS and Java for branch-level operations and offline resilience.</p>
             <ul>
-              <li>Integrated OCR, image handling, and structured data workflows.</li>
-              <li>Used Apache POI for advanced Excel reporting automation.</li>
-              <li>Deployed across multiple high-security financial branches.</li>
+              <li>Integrated OCR, image handling, and structured data workflows into a single branch-ready desktop tool.</li>
+              <li>Automated complex Excel reporting with Apache POI to reduce manual reporting overhead.</li>
+              <li>Deployed across 10+ high-security financial branches and improved data encoding accuracy by 25%.</li>
             </ul>
           </article>
         </section>
@@ -124,12 +164,12 @@
             <article class="timeline-item">
               <p class="timeline-period">2020 — Present</p>
               <div>
-                <h3>Senior Configuration Engineer • Eclaro International (Benekiva)</h3>
+                <h3>Senior Configuration Engineer • Eclaro International</h3>
                 <p>Led configuration strategy and execution from POC to UAT and production using the Crawl-Walk-Run model.</p>
                 <ul>
-                  <li>Built core setups and integration mappings for major insurance providers.</li>
-                  <li>Worked across BA and engineering teams to translate business logic into technical delivery plans.</li>
-                  <li>Resolved high-priority production incidents and reduced delivery risk.</li>
+                  <li>Built foundational setups and integration mappings for an early carrier roster serving business-critical enterprise accounts.</li>
+                  <li>Converted legacy business logic into reusable delivery patterns that helped reduce POC time-to-live by 38% (4 months to 2.5 months).</li>
+                  <li>Served as a senior escalation point for high-priority production incidents, protecting delivery momentum across UAT and production rollouts.</li>
                 </ul>
               </div>
             </article>
@@ -140,9 +180,9 @@
                 <h3>Senior Programmer • Software Ventures International</h3>
                 <p>Delivered a modern cross-platform toolchain for enterprise digitization and operational workflows.</p>
                 <ul>
-                  <li>Replaced legacy applications with Electron + Java stack implementations.</li>
-                  <li>Built data-sync and API layers for distributed branch deployments.</li>
-                  <li>Mentored junior developers and supported client-side rollout execution.</li>
+                  <li>Replaced a legacy Visual Basic application with an Electron + Java stack designed for offline-capable enterprise deployments.</li>
+                  <li>Built data-sync and API layers used in rollouts across 10+ financial branches.</li>
+                  <li>Improved data encoding accuracy by 25% and advanced from trainee to senior within 2 years.</li>
                 </ul>
               </div>
             </article>
