@@ -36,6 +36,13 @@ a {
   text-decoration: none;
 }
 
+a:focus-visible,
+button:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
 h1,
 h2,
 h3,
@@ -161,6 +168,14 @@ ul {
 
 .button:hover {
   background: rgba(245, 245, 246, 0.1);
+}
+
+.button:focus-visible,
+.nav-toggle:focus-visible,
+.section-nav a:focus-visible,
+.socials a:focus-visible,
+.version-switch select:focus-visible {
+  background: rgba(245, 245, 246, 0.08);
 }
 
 .button-outline {
@@ -367,6 +382,20 @@ h2 {
   padding: 8px 12px;
   font-size: 0.82rem;
   font-family: var(--font-mono);
+}
+
+.skill-groups {
+  display: grid;
+  gap: 28px;
+}
+
+.skill-group-title {
+  margin-bottom: 12px;
+  color: var(--heading);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 .project-card {

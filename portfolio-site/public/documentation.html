@@ -15,6 +15,7 @@
 
         <nav class="docs-nav" aria-label="Documentation sections">
           <a href="#overview">Overview</a>
+          <a href="#positioning">Positioning</a>
           <a href="#vision">Vision & Mission</a>
           <a href="#build">How It Was Built</a>
           <a href="#updates">Update Log</a>
@@ -42,14 +43,32 @@
             This page explains the intent, architecture, and change history of this portfolio. It serves as a quick reference for future updates and
             for employers who want to understand how the site is maintained.
           </p>
+          <p>
+            The current direction is deliberate: position the site around senior-level delivery, AI-augmented development, and legacy system modernization,
+            while keeping every claim tied to concrete implementation work.
+          </p>
+        </section>
+
+        <section class="docs-section" id="positioning">
+          <h2>Positioning Strategy</h2>
+          <p>
+            Earlier versions of this portfolio leaned too heavily on configuration work. The current version reframes that experience as a stronger market signal:
+            a senior developer who can inherit messy systems, modernize them safely, and use AI tooling to move faster without lowering engineering quality.
+          </p>
+          <ul>
+            <li><strong>Primary role signal:</strong> Senior Web Developer with AI-augmented backend and legacy modernization experience.</li>
+            <li><strong>Proof strategy:</strong> Show measurable outcomes instead of generic responsibilities.</li>
+            <li><strong>AI framing:</strong> AI is presented as an accelerator for analysis, refactoring, and test generation, not as a replacement for engineering judgment.</li>
+            <li><strong>Recruiter scan goal:</strong> Make the core story understandable in under five seconds through the headline, grouped skills, and featured case study.</li>
+          </ul>
         </section>
 
         <section class="docs-section" id="vision">
           <h2>Vision & Mission</h2>
-          <p>This portfolio is designed to showcase implementation engineering, full-stack capability, and configuration-first delivery experience.</p>
+          <p>This portfolio is designed to showcase AI-augmented delivery, full-stack capability, and senior-level modernization work with clear technical evidence.</p>
           <ul>
-            <li><strong>Vision:</strong> Present a modern, credible technical profile with clear project evidence.</li>
-            <li><strong>Mission:</strong> Help hiring teams evaluate delivery strength quickly through an accessible live portfolio.</li>
+            <li><strong>Vision:</strong> Present a modern technical profile that reads as senior, outcome-focused, and credible under scrutiny.</li>
+            <li><strong>Mission:</strong> Help hiring teams evaluate architecture, delivery, and problem-solving strength quickly through a live portfolio with measurable proof.</li>
           </ul>
         </section>
 
@@ -59,6 +78,8 @@
             <li>Built with <strong>Vite (vanilla JS)</strong> for fast local development and lightweight production output.</li>
             <li>Main portfolio uses a two-column v2 layout (sticky profile panel + section-based content flow).</li>
             <li>Documentation page uses a dedicated static stylesheet (<code>public/documentation.css</code>) for reliable deployment.</li>
+            <li>Resume download is served directly from <code>public/resume.pdf</code> to reduce mobile friction.</li>
+            <li>AI proof is supported by a dedicated case-study route that shows before/after refactor evidence.</li>
             <li>Repository: <a href="https://github.com/tombeng027/my-jobhunt-portfolio" target="_blank" rel="noreferrer">github.com/tombeng027/my-jobhunt-portfolio</a>.</li>
           </ul>
         </section>
@@ -69,6 +90,14 @@
 
           <h3>Recent update log</h3>
           <ul>
+            <li>Removed client-identifying references from the portfolio and case-study content while preserving the technical outcomes and delivery metrics.</li>
+            <li>Improved keyboard accessibility with visible focus states and fixed mobile navigation state handling for better screen-reader behavior.</li>
+            <li>Created a dedicated <strong>development</strong> branch so portfolio improvements can be tested safely without affecting the live site.</li>
+            <li>Repositioned the main headline and about copy around <strong>AI-augmented development</strong>, <strong>independent problem solving</strong>, and <strong>legacy modernization</strong>.</li>
+            <li>Reorganized the skills section into recruiter-facing groups: <strong>Core Tech</strong>, <strong>AI Integration</strong>, and <strong>Legacy &amp; Enterprise</strong>.</li>
+            <li>Added a dedicated <strong>AI Refactor Case Study</strong> page with before/after code comparison and quantified outcomes.</li>
+            <li>Changed the resume CTA to a direct PDF download for a better mobile recruiter experience, while preserving a Google Drive fallback on v1.</li>
+            <li>Rewrote project and experience bullets to emphasize measurable impact, including 38% faster POC delivery, 25% accuracy improvement, and 10+ branch deployments.</li>
             <li>Created and published GitHub repository with GitHub Pages deployment workflow.</li>
             <li>Fixed GitHub Pages issues (404, workflow location, action version, permissions, and Pages source setup).</li>
             <li>Corrected production asset path handling for Vite by configuring relative base paths.</li>
@@ -88,12 +117,14 @@
 
         <section class="docs-section" id="deploy">
           <h2>Deployment</h2>
-          <p>The site deploys automatically via GitHub Actions to GitHub Pages.</p>
+          <p>The site deploys automatically via GitHub Actions to GitHub Pages. Current workflow keeps production safe by limiting deployment to the main production branches.</p>
           <ol>
-            <li>Push changes to the tracked branch.</li>
+            <li>Make and test changes on the <code>development</code> branch.</li>
+            <li>Merge approved work into <code>main</code> (or <code>master</code> if used for production).</li>
             <li>Workflow builds the project with <code>npm run build</code>.</li>
             <li>Generated files are published to <code>gh-pages</code>.</li>
           </ol>
+          <p>Repository patch notes are maintained in <code>docs/PATCHNOTES.md</code> so release-level changes remain searchable outside the live site.</p>
           <p>Live URL: <a href="https://tombeng027.github.io/my-jobhunt-portfolio/" target="_blank" rel="noreferrer">tombeng027.github.io/my-jobhunt-portfolio</a>.</p>
         </section>
 
