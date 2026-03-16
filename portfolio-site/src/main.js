@@ -18,6 +18,12 @@ function toggleNav() {
   navList.classList.toggle('is-open', !expanded)
 }
 
+function closeNav() {
+  if (!navToggle || !navList) return
+  navToggle.setAttribute('aria-expanded', 'false')
+  navList.classList.remove('is-open')
+}
+
 function setActiveSection(id) {
   navLinks.forEach((link) => {
     const active = link.getAttribute('href') === `#${id}`
@@ -65,7 +71,7 @@ function init() {
   setCurrentYear()
   navToggle?.addEventListener('click', toggleNav)
   navLinks.forEach((link) => {
-    link.addEventListener('click', () => navList.classList.remove('is-open'))
+    link.addEventListener('click', closeNav)
   })
 
   if (sections[0]) setActiveSection(sections[0].id)
