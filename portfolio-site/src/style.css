@@ -369,6 +369,20 @@ h2 {
   font-family: var(--font-mono);
 }
 
+.skill-groups {
+  display: grid;
+  gap: 28px;
+}
+
+.skill-group-title {
+  margin-bottom: 12px;
+  color: var(--heading);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
 .project-card {
   background: var(--surface-2);
   border: 1px solid rgba(245, 245, 246, 0.14);
