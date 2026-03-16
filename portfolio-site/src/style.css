@@ -200,6 +200,13 @@ ul {
   height: 20px;
 }
 
+.button-icon img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  display: block;
+}
+
 .socials {
   margin-top: 18px;
   display: flex;
