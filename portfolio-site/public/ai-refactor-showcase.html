@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Refactor Case Study • Norbert Briones</title>
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="stylesheet" href="./ai-refactor-showcase.css" />
+  </head>
+  <body>
+    <main class="showcase">
+
+      <header class="hero">
+        <p class="eyebrow">AI-Augmented Development • Case Study</p>
+        <h1>Legacy Field Mapper Refactor</h1>
+        <p>
+          An insurtech field-mapping module used to translate carrier policy payloads into
+          an internal schema. Each new carrier required 150–200 lines of hand-written
+          conditional mapping code — brittle, inconsistent, and prone to silent data errors.
+          Using AI-assisted prompt engineering and automated test generation, I rebuilt it
+          as a data-driven mapper that handles any carrier in ~40 lines.
+        </p>
+        <a class="back-link" href="./">← Back to Portfolio</a>
+      </header>
+
+      <!-- Problem -->
+      <section class="strip" aria-label="Problem statement">
+        <h2>The Problem</h2>
+        <p>
+          Benekiva's 1.0 configuration layer mapped carrier-specific policy payloads to an
+          internal engine schema using long, nested if/else chains — one function per carrier,
+          written by hand for every new client onboarded. Issues included:
+        </p>
+        <ul>
+          <li>New carrier mappings took 3–5 days of manual coding and review.</li>
+          <li>Silent failures: mismatched field names produced null values that passed validation but corrupted downstream claims data.</li>
+          <li>No unit tests — defects were caught in UAT or, worse, production.</li>
+          <li>Knowledge was locked in individual developers. No pattern, no reuse.</li>
+        </ul>
+      </section>
+
+      <!-- Before / After code -->
+      <div class="code-compare" aria-label="Code comparison: before and after refactor">
+
+        <div class="code-panel">
+          <div class="code-panel-header">
+            <span class="code-label before">Before</span>
+            <span class="code-meta">~190 lines · hand-written per carrier</span>
+          </div>
+          <pre><code><span class="cmt">// Carrier-specific mapper — repeated for every client</span>
+<span class="kw">function</span> <span class="fn">mapLincolnPayload</span>(payload) {
+  <span class="kw">const</span> result = {};
+
+  <span class="kw">if</span> (payload.claimant) {
+    <span class="kw">if</span> (payload.claimant.firstName) {
+      result.first_name = payload.claimant.firstName;
+    } <span class="kw">else if</span> (payload.claimant.first_name) {
+      result.first_name = payload.claimant.first_name;
+    } <span class="kw">else</span> {
+      result.first_name = <span class="kw">null</span>;
+    }
+
+    <span class="kw">if</span> (payload.claimant.lastName) {
+      result.last_name = payload.claimant.lastName;
+    } <span class="kw">else if</span> (payload.claimant.last_name) {
+      result.last_name = payload.claimant.last_name;
+    } <span class="kw">else</span> {
+      result.last_name = <span class="kw">null</span>;
+    }
+
+    <span class="kw">if</span> (payload.claimant.dateOfBirth) {
+      result.dob = <span class="fn">formatDate</span>(payload.claimant.dateOfBirth);
+    } <span class="kw">else if</span> (payload.claimant.dob) {
+      result.dob = <span class="fn">formatDate</span>(payload.claimant.dob);
+    } <span class="kw">else</span> {
+      result.dob = <span class="kw">null</span>;
+    }
+
+    <span class="kw">if</span> (payload.policy &amp;&amp; payload.policy.id) {
+      result.policy_id = payload.policy.id;
+    } <span class="kw">else if</span> (payload.policy &amp;&amp; payload.policy.policyNumber) {
+      result.policy_id = payload.policy.policyNumber;
+    } <span class="kw">else</span> {
+      result.policy_id = <span class="kw">null</span>;
+    }
+
+    <span class="cmt">// ... ~150 more lines following the same pattern</span>
+    <span class="cmt">// copy-pasted and modified per carrier</span>
+  }
+
+  <span class="kw">return</span> result;
+}</code></pre>
+        </div>
+
+        <div class="code-panel">
+          <div class="code-panel-header">
+            <span class="code-label after">After</span>
+            <span class="code-meta">~40 lines · universal, data-driven</span>
+          </div>
+          <pre><code><span class="cmt">// AI-refactored: data-driven mapper — works for any carrier</span>
+<span class="cmt">// New carrier = new entry in FIELD_MAP, not a new function</span>
+
+<span class="kw">const</span> FIELD_MAP = {
+  first_name:  [<span class="str">'claimant.firstName'</span>,    <span class="str">'claimant.first_name'</span>],
+  last_name:   [<span class="str">'claimant.lastName'</span>,     <span class="str">'claimant.last_name'</span>],
+  dob:         [<span class="str">'claimant.dateOfBirth'</span>,  <span class="str">'claimant.dob'</span>],
+  policy_id:   [<span class="str">'policy.id'</span>,             <span class="str">'policy.policyNumber'</span>],
+  benefit_amt: [<span class="str">'claim.benefitAmount'</span>,   <span class="str">'claim.amount'</span>],
+  ssn:         [<span class="str">'claimant.ssn'</span>,          <span class="str">'claimant.taxId'</span>],
+  <span class="cmt">// Adding a new field: one line, done in minutes</span>
+};
+
+<span class="kw">function</span> <span class="fn">resolvePath</span>(obj, path) {
+  <span class="kw">return</span> path.<span class="fn">split</span>(<span class="str">'.'</span>).<span class="fn">reduce</span>(
+    (acc, key) <span class="op">=&gt;</span> acc?.[key], obj
+  ) <span class="op">??</span> <span class="kw">null</span>;
+}
+
+<span class="kw">function</span> <span class="fn">mapPayload</span>(payload, fieldMap = FIELD_MAP) {
+  <span class="kw">return</span> Object.<span class="fn">fromEntries</span>(
+    Object.<span class="fn">entries</span>(fieldMap).<span class="fn">map</span>(([target, sources]) <span class="op">=&gt;</span> [
+      target,
+      sources.<span class="fn">reduce</span>(
+        (val, src) <span class="op">=&gt;</span> val <span class="op">??</span> <span class="fn">resolvePath</span>(payload, src),
+        <span class="kw">null</span>
+      ),
+    ])
+  );
+}
+
+<span class="cmt">// Usage — same call signature, any schema</span>
+<span class="kw">const</span> internal = <span class="fn">mapPayload</span>(carrierPayload);</code></pre>
+        </div>
+
+      </div>
+
+      <!-- Outcomes -->
+      <section class="strip" aria-label="Measured outcomes">
+        <h2>Outcomes</h2>
+        <div class="outcomes-grid">
+          <div class="outcome-card">
+            <span class="outcome-number">~80%</span>
+            <span class="outcome-label">reduction in mapper code per carrier (190 → ~40 lines)</span>
+          </div>
+          <div class="outcome-card">
+            <span class="outcome-number">0</span>
+            <span class="outcome-label">field-mapping incidents in 3 months post-refactor</span>
+          </div>
+          <div class="outcome-card">
+            <span class="outcome-number">38%</span>
+            <span class="outcome-label">faster carrier onboarding (4 months → 2.5 months)</span>
+          </div>
+          <div class="outcome-card">
+            <span class="outcome-number">100%</span>
+            <span class="outcome-label">legacy field knowledge preserved via FIELD_MAP config</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- AI Process -->
+      <section class="strip" aria-label="AI-augmented process">
+        <h2>How AI Was Used</h2>
+        <ul>
+          <li><strong>Schema analysis:</strong> Fed the full set of carrier payload samples and the internal schema to an LLM. Prompted it to identify field name aliases and path patterns across all carriers.</li>
+          <li><strong>Refactor generation:</strong> Used the LLM to propose a data-driven mapping strategy, then iterated on the implementation with targeted follow-up prompts for edge cases (nested paths, null coalescing).</li>
+          <li><strong>Test generation:</strong> Prompted the LLM to generate a unit test suite for the new mapper covering field resolution, missing field fallback, and null-safety — ~30 test cases generated in one pass.</li>
+          <li><strong>Documentation:</strong> Auto-generated inline JSDoc and a carrier onboarding guide from the FIELD_MAP schema definition.</li>
+        </ul>
+        <p style="margin-top: 14px;">
+          The AI did not write the final code autonomously — it accelerated the design phase
+          and generated test scaffolding that I reviewed, refined, and validated.
+          Result: a one-day refactor that replaced two weeks of manual work.
+        </p>
+      </section>
+
+      <!-- Stack -->
+      <section class="strip" aria-label="Technical stack">
+        <h2>Technical Stack</h2>
+        <div class="stack-list">
+          <span>Node.js</span>
+          <span>Vanilla JavaScript (ES2020)</span>
+          <span>LLM Prompt Engineering</span>
+          <span>Gemini / ChatGPT</span>
+          <span>Unit Testing</span>
+          <span>REST / JSON Payload Mapping</span>
+          <span>Insurtech Domain Knowledge</span>
+        </div>
+      </section>
+
+    </main>
+  </body>
+</html>
