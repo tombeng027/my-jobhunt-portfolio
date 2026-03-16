@@ -27,7 +27,7 @@
       <section class="strip" aria-label="Problem statement">
         <h2>The Problem</h2>
         <p>
-          Benekiva's 1.0 configuration layer mapped carrier-specific policy payloads to an
+          A legacy 1.0 configuration layer mapped carrier-specific policy payloads to an
           internal engine schema using long, nested if/else chains — one function per carrier,
           written by hand for every new client onboarded. Issues included:
         </p>
@@ -48,7 +48,7 @@
             <span class="code-meta">~190 lines · hand-written per carrier</span>
           </div>
           <pre><code><span class="cmt">// Carrier-specific mapper — repeated for every client</span>
-<span class="kw">function</span> <span class="fn">mapLincolnPayload</span>(payload) {
+<span class="kw">function</span> <span class="fn">mapPolicyPayloadLegacy</span>(payload) {
   <span class="kw">const</span> result = {};
 
   <span class="kw">if</span> (payload.claimant) {
