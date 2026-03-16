@@ -79,6 +79,10 @@
             <li>Design direction was inspired by modern developer portfolio patterns, including brittanychiang.com, while keeping this implementation and content original to my profile.</li>
             <li>Updated navigation behavior to highlight active sections and support mobile section toggling.</li>
             <li>Redesigned this documentation page to match v2 styling and removed fragile hashed asset dependencies.</li>
+            <li>Created <strong>Old Software Showcase</strong> page to archive earlier projects from 2018–2020, with dedicated styling and project cards.</li>
+            <li>Added an <strong>E-Commerce Showcase</strong> to demonstrate full-stack thinking and UI/UX understanding — product listing, cart, and checkout flows implemented using local storage, with no external APIs at this stage.</li>
+            <li>Upgraded the E-Commerce Showcase to consume the <strong>FakeStore REST API</strong> — products and categories are now fetched live using <code>fetch</code> and <code>async/await</code>, replacing the previous hardcoded data. Includes loading and error states, dynamic category filter population, and real product images.</li>
+            <li>Added a localStorage cache fallback to the E-Commerce Showcase — API responses are saved on success and served from cache if the API is unavailable, ensuring the showcase remains functional offline or during API downtime.</li>
           </ul>
         </section>
 
