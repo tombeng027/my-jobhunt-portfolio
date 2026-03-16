@@ -186,6 +186,20 @@ ul {
   color: var(--accent);
 }
 
+.button-icon {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
 .socials {
   margin-top: 18px;
   display: flex;
