@@ -1,0 +1,132 @@
+:root {
+  --bg: #0b0b0c;
+  --surface: #121316;
+  --text: #d9d9dc;
+  --heading: #f5f5f6;
+  --muted: #a4a4ab;
+  --border: rgba(245, 245, 246, 0.2);
+  --font-sans: Inter, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+}
+
+.showcase {
+  width: min(860px, 100% - 48px);
+  margin: 0 auto;
+  padding: 72px 0 64px;
+}
+
+.hero {
+  max-width: 70ch;
+  margin-bottom: 24px;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+h1 {
+  margin: 12px 0 14px;
+  color: var(--heading);
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  line-height: 1.1;
+}
+
+.hero p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.back-link,
+.case-link {
+  display: inline-flex;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px 14px;
+  color: var(--heading);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.back-link {
+  margin-top: 18px;
+}
+
+.back-link:hover,
+.case-link:hover {
+  background: rgba(245, 245, 246, 0.1);
+}
+
+.cases {
+  display: grid;
+  gap: 14px;
+}
+
+.case-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px;
+}
+
+.case-card h2 {
+  margin: 0 0 8px;
+  color: var(--heading);
+  font-size: 1.12rem;
+}
+
+.case-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.case-link {
+  margin-top: 14px;
+}
+
+.case-card-featured {
+  background:
+    radial-gradient(circle at top right, rgba(95, 225, 171, 0.12), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0));
+}
+
+.status-chip {
+  display: inline-flex;
+  margin-bottom: 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 5px 10px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+@media (max-width: 760px) {
+  .showcase {
+    width: min(860px, 100% - 32px);
+    padding: 56px 0 48px;
+  }
+}
