@@ -5,7 +5,7 @@
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Norbert Briones • Portfolio v2</title>
-    <script type="module" crossorigin src="./assets/main-CBvKQ8Nq.js"></script>
+    <script type="module" crossorigin src="./assets/main-Ckq9A0lo.js"></script>
     <link rel="modulepreload" crossorigin href="./assets/modulepreload-polyfill-wMinxHhO.js">
     <link rel="stylesheet" crossorigin href="./assets/main-4YdyzbIc.css">
   </head>
@@ -43,6 +43,7 @@
           <a class="button" href="./case-studies.html">Case Studies</a>
           <a class="button" href="./ecommerce-showcase.html">E-commerce Showcase</a>
           <a class="button button-outline" href="./old-software-showcase.html">Old Software Showcase</a>
+          <a class="button" href="./contact.html">Contact Me</a>
         </div>
 
         <!-- socials removed for Upwork-safe version -->
@@ -171,9 +172,7 @@
             <article class="timeline-item">
               <p class="timeline-period">2020 — Present</p>
               <div>
-                <h3>Senior Configuration Engineer • Eclaro International</h3>
-                            <h3>Senior Configuration Engineer • Global Consulting Firm</h3>
-                            <h3>Senior Configuration Engineer • Eclaro International</h3>
+                  <h3>Senior Configuration Engineer • Eclaro International</h3>
                 <p>Led configuration strategy and execution from POC to UAT and production using the Crawl-Walk-Run model.</p>
                 <ul>
                   <li>Built foundational setups and integration mappings for an early carrier roster serving business-critical enterprise accounts.</li>
@@ -187,8 +186,6 @@
               <p class="timeline-period">2018 — 2020</p>
               <div>
                 <h3>Senior Programmer • Software Ventures International</h3>
-                            <h3>Senior Programmer • Enterprise Software Provider</h3>
-                            <h3>Senior Programmer • Software Ventures International</h3>
                 <p>Delivered a modern cross-platform toolchain for enterprise digitization and operational workflows.</p>
                 <ul>
                   <li>Replaced a legacy Visual Basic application with an Electron + Java stack designed for offline-capable enterprise deployments.</li>
@@ -202,10 +199,8 @@
               <p class="timeline-period">2016 — 2017</p>
               <div>
                 <h3>Technical Support Representative • Convergys</h3>
-                            <h3>Technical Support Representative • Global BPO</h3>
-                            <h3>Technical Support Representative • Convergys</h3>
                 <p>Handled complex troubleshooting for AT&amp;T pre-installation issues with strong escalation discipline and client communication.</p>
-                          <p>Handled complex troubleshooting for major telecom pre-installation issues with strong escalation discipline and client communication.</p>
+                <!-- If you want to mention anonymized experience, add a single line here. -->
               </div>
             </article>
           </div>
@@ -224,7 +219,7 @@
             </div>
           </div>
           <div style="margin-top:2rem;text-align:center;">
-            <a href="./contact.html" class="button button-outline" style="padding:0.75rem 2rem;font-size:1.1rem;">Contact Me</a>
+            <a href="/contact.html" class="button button-outline" style="padding:0.75rem 2rem;font-size:1.1rem;">Contact Me</a>
           </div>
         </section>
 
@@ -240,9 +235,9 @@
         if (versionSelect) {
           versionSelect.addEventListener('change', (e) => {
             const val = e.target.value;
-            if (val === 'v1') window.location.href = './version-1.html';
+            if (val === 'v1') window.location.href = '/public/version-1.html';
             else if (val === 'v2') window.location.href = '/index.html';
-            else if (val === 'v3') window.location.href = './version-3.html';
+            else if (val === 'v3') window.location.href = '/public/version-3.html';
           });
         }
       </script>
