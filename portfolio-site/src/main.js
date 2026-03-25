@@ -62,7 +62,14 @@ function initVersionSwitch() {
       window.location.href = './version-1.html'
       return
     }
-
+    if (selected === 'v2') {
+      window.location.href = './index.html'
+      return
+    }
+    if (selected === 'v3') {
+      window.location.href = './public/version-3.html'
+      return
+    }
     window.location.href = './'
   })
 }
