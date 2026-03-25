@@ -297,9 +297,11 @@
   <script>
     document.getElementById('versionSwitcher').addEventListener('change', function(e) {
       const val = e.target.value;
-      if (val === 'v2') window.location.href = '/index.html';
-      else if (val === 'v1') window.location.href = '/public/version-1.html';
-      else if (val === 'v3') window.location.href = '/public/version-3.html';
+      const base = '/my-jobhunt-portfolio/';
+      if (val === 'v1') window.location.href = base + 'version-1.html';
+      else if (val === 'v2') window.location.href = base + 'index.html';
+      else if (val === 'v3') window.location.href = base + 'version-3.html';
+      else window.location.href = base + 'index.html';
     });
   </script>
   <div class="slide-hero" id="hero">
