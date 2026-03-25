@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Docs – Portfolio v3</title>
+  <link rel="stylesheet" href="/src/style.css" />
+  <style>
+    body { background: #181a20; color: #fff; font-family: 'Inter', Arial, sans-serif; margin: 0; }
+    .v3-page-container { max-width: 800px; margin: 3rem auto; background: #232946; border-radius: 2rem; box-shadow: 0 8px 40px 0 #0005; padding: 2.5rem; }
+    .v3-back-btn { display: inline-block; margin-bottom: 2rem; padding: 0.7rem 1.5rem; border-radius: 1.2rem; border: none; background: #ffb800; color: #232946; font-size: 1rem; font-weight: 600; cursor: pointer; box-shadow: 0 2px 12px 0 #0002; transition: background 0.2s; text-decoration: none; }
+    .v3-back-btn:hover { background: #ffd700; }
+    h1, h2, h3 { color: #ffb800; }
+    ul { margin-left: 1.2rem; }
+  </style>
+</head>
+<body>
+  <div class="v3-page-container">
+    <button class="v3-back-btn" onclick="goBackToProjects()">← Back to Projects</button>
+    <script>
+      function goBackToProjects() {
+        window.location.href = '/public/version-3.html#slideProjects';
+      }
+    </script>
+    <div style="background:#ffd700;color:#232946;padding:0.7rem 1.2rem;border-radius:1rem;margin-bottom:1.5rem;font-weight:600;">
+      <strong>Note:</strong> Version 2 is the main live version. Version 3 is in ongoing development and may not reflect the latest stable content.
+    </div>
+    <h1>Documentation</h1>
+    <h2>About This Portfolio</h2>
+    <ul>
+      <li>Vite-powered static site with clean, maintainable architecture</li>
+      <li>Readable technical storytelling and outcome-focused project writeups</li>
+      <li>Automated deployment via GitHub Actions</li>
+      <li>Modern, privacy-friendly design with no tracking or analytics</li>
+      <li>All content and code are original and open source</li>
+    </ul>
+    <h2>Notes</h2>
+    <ul>
+      <li>Portfolio is focused on senior-level delivery, AI-augmented development, and legacy modernization.</li>
+      <li>All claims are tied to concrete implementation work and measurable outcomes.</li>
+      <li>Case studies and showcases are anonymized for privacy, but real employer names are shown in Experience.</li>
+      <li>Navigation and internal links are designed to keep users within the v3 experience.</li>
+      <li>For full update history, see <code>docs/PATCHNOTES.md</code> in the repository.</li>
+    </ul>
+  </div>
+</body>
+</html>
