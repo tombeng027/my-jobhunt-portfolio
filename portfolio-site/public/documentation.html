@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Documentation • Portfolio v2</title>
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="stylesheet" href="./documentation.css" />
+  </head>
+  <body>
+    <div class="docs-layout" id="top">
+      <aside class="docs-sidebar">
+        <a class="docs-brand" href="./">Norbert M. Briones</a>
+        <p class="docs-subtitle">Portfolio v2 Documentation</p>
+
+        <nav class="docs-nav" aria-label="Documentation sections">
+          <a href="#overview">Overview</a>
+          <a href="#positioning">Positioning</a>
+          <a href="#vision">Vision & Mission</a>
+          <a href="#build">How It Was Built</a>
+          <a href="#updates">Update Log</a>
+          <a href="#deploy">Deployment</a>
+        </nav>
+
+        <div class="docs-actions">
+          <a href="./">Back to Portfolio</a>
+          <a href="https://github.com/tombeng027/my-jobhunt-portfolio" target="_blank" rel="noreferrer">Repository</a>
+        </div>
+
+        <div class="docs-version-switch">
+          <label for="versionSelectDocs">Versions</label>
+          <select id="versionSelectDocs" aria-label="Select portfolio version">
+            <option value="v2" selected>Version 2</option>
+            <option value="v1">Version 1</option>
+          </select>
+        </div>
+      </aside>
+
+      <main class="docs-content">
+        <section class="docs-section" id="overview">
+          <h1>Portfolio Documentation</h1>
+          <p>
+            This page explains the intent, architecture, and change history of this portfolio. It serves as a quick reference for future updates and
+            for employers who want to understand how the site is maintained.
+          </p>
+          <p>
+            The current direction is deliberate: position the site around senior-level delivery, AI-augmented development, and legacy system modernization,
+            while keeping every claim tied to concrete implementation work.
+          </p>
+        </section>
+
+        <section class="docs-section" id="positioning">
+          <h2>Positioning Strategy</h2>
+          <p>
+            Earlier versions of this portfolio leaned too heavily on configuration work. The current version reframes that experience as a stronger market signal:
+            a senior developer who can inherit messy systems, modernize them safely, and use AI tooling to move faster without lowering engineering quality.
+          </p>
+          <ul>
+            <li><strong>Primary role signal:</strong> Senior Web Developer with AI-augmented backend and legacy modernization experience.</li>
+            <li><strong>Proof strategy:</strong> Show measurable outcomes instead of generic responsibilities.</li>
+            <li><strong>AI framing:</strong> AI is presented as an accelerator for analysis, refactoring, and test generation, not as a replacement for engineering judgment.</li>
+            <li><strong>Recruiter scan goal:</strong> Make the core story understandable in under five seconds through the headline, grouped skills, and featured case study.</li>
+          </ul>
+        </section>
+
+        <section class="docs-section" id="vision">
+          <h2>Vision & Mission</h2>
+          <p>This portfolio is designed to showcase AI-augmented delivery, full-stack capability, and senior-level modernization work with clear technical evidence.</p>
+          <ul>
+            <li><strong>Vision:</strong> Present a modern technical profile that reads as senior, outcome-focused, and credible under scrutiny.</li>
+            <li><strong>Mission:</strong> Help hiring teams evaluate architecture, delivery, and problem-solving strength quickly through a live portfolio with measurable proof.</li>
+          </ul>
+        </section>
+
+        <section class="docs-section" id="build">
+          <h2>How It Was Built</h2>
+          <ul>
+            <li>Built with <strong>Vite (vanilla JS)</strong> for fast local development and lightweight production output.</li>
+            <li>Main portfolio uses a two-column v2 layout (sticky profile panel + section-based content flow).</li>
+            <li>Documentation page uses a dedicated static stylesheet (<code>public/documentation.css</code>) for reliable deployment.</li>
+            <li>Resume download is served directly from <code>public/resume.pdf</code> to reduce mobile friction.</li>
+            <li>AI proof is supported by a dedicated case-study route that shows before/after refactor evidence.</li>
+            <li>Repository: <a href="https://github.com/tombeng027/my-jobhunt-portfolio" target="_blank" rel="noreferrer">github.com/tombeng027/my-jobhunt-portfolio</a>.</li>
+          </ul>
+        </section>
+
+        <section class="docs-section" id="updates">
+          <h2>How This Portfolio Was Updated</h2>
+          <p>The portfolio has been iteratively refined to align with current job-hunt goals and improve technical presentation.</p>
+
+          <h3>Recent update log</h3>
+          <ul>
+            <li>Removed client-identifying references from the portfolio and case-study content while preserving the technical outcomes and delivery metrics.</li>
+            <li>Improved keyboard accessibility with visible focus states and fixed mobile navigation state handling for better screen-reader behavior.</li>
+            <li>Created a dedicated <strong>development</strong> branch so portfolio improvements can be tested safely without affecting the live site.</li>
+            <li>Repositioned the main headline and about copy around <strong>AI-augmented development</strong>, <strong>independent problem solving</strong>, and <strong>legacy modernization</strong>.</li>
+            <li>Reorganized the skills section into recruiter-facing groups: <strong>Core Tech</strong>, <strong>AI Integration</strong>, and <strong>Legacy &amp; Enterprise</strong>.</li>
+            <li>Added a dedicated <strong>AI Refactor Case Study</strong> page with before/after code comparison and quantified outcomes.</li>
+            <li>Changed the resume CTA to a direct PDF download for a better mobile recruiter experience, while preserving a Google Drive fallback on v1.</li>
+            <li>Rewrote project and experience bullets to emphasize measurable impact, including 38% faster POC delivery, 25% accuracy improvement, and 10+ branch deployments.</li>
+            <li>Created and published GitHub repository with GitHub Pages deployment workflow.</li>
+            <li>Fixed GitHub Pages issues (404, workflow location, action version, permissions, and Pages source setup).</li>
+            <li>Corrected production asset path handling for Vite by configuring relative base paths.</li>
+            <li>Integrated working project links for <strong>Repo</strong> and <strong>Docs</strong> in the portfolio project card.</li>
+            <li>Moved documentation into the public output path so it is deployable and accessible from the live site.</li>
+            <li>Replaced generic hero code sample with a configuration-focused snippet aligned to implementation work.</li>
+            <li>Created <strong>version-2</strong> branch and redesigned the main site into a minimalist two-column structure inspired by modern developer portfolios.</li>
+            <li>Design direction was inspired by modern developer portfolio patterns, including brittanychiang.com, while keeping this implementation and content original to my profile.</li>
+            <li>Updated navigation behavior to highlight active sections and support mobile section toggling.</li>
+            <li>Redesigned this documentation page to match v2 styling and removed fragile hashed asset dependencies.</li>
+            <li>Created <strong>Old Software Showcase</strong> page to archive earlier projects from 2018–2020, with dedicated styling and project cards.</li>
+            <li>Added an <strong>E-Commerce Showcase</strong> to demonstrate full-stack thinking and UI/UX understanding — product listing, cart, and checkout flows implemented using local storage, with no external APIs at this stage.</li>
+            <li>Upgraded the E-Commerce Showcase to consume the <strong>FakeStore REST API</strong> — products and categories are now fetched live using <code>fetch</code> and <code>async/await</code>, replacing the previous hardcoded data. Includes loading and error states, dynamic category filter population, and real product images.</li>
+            <li>Added a localStorage cache fallback to the E-Commerce Showcase — API responses are saved on success and served from cache if the API is unavailable, ensuring the showcase remains functional offline or during API downtime.</li>
+          </ul>
+        </section>
+
+        <section class="docs-section" id="deploy">
+          <h2>Deployment</h2>
+          <p>The site deploys automatically via GitHub Actions to GitHub Pages. Current workflow keeps production safe by limiting deployment to the main production branches.</p>
+          <ol>
+            <li>Make and test changes on the <code>development</code> branch.</li>
+            <li>Merge approved work into <code>main</code> (or <code>master</code> if used for production).</li>
+            <li>Workflow builds the project with <code>npm run build</code>.</li>
+            <li>Generated files are published to <code>gh-pages</code>.</li>
+          </ol>
+          <p>Repository patch notes are maintained in <code>docs/PATCHNOTES.md</code> so release-level changes remain searchable outside the live site.</p>
+          <p>Live URL: <a href="https://tombeng027.github.io/my-jobhunt-portfolio/" target="_blank" rel="noreferrer">tombeng027.github.io/my-jobhunt-portfolio</a>.</p>
+        </section>
+
+        <footer class="docs-footer">
+          <span>© <span id="year"></span> Norbert M. Briones • Portfolio Documentation</span>
+        </footer>
+      </main>
+    </div>
+
+    <script>
+      const year = document.querySelector('#year');
+      if (year) year.textContent = new Date().getFullYear();
+
+      const versionSelect = document.querySelector('#versionSelectDocs');
+      if (versionSelect) {
+        versionSelect.addEventListener('change', () => {
+          if (versionSelect.value === 'v1') {
+            window.location.href = './version-1.html';
+            return;
+          }
+
+          window.location.href = './';
+        });
+      }
+    </script>
+  </body>
+</html>

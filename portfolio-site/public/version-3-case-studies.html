@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Study – Portfolio v3</title>
+  <link rel="stylesheet" href="/src/style.css" />
+  <style>
+    body { background: #181a20; color: #fff; font-family: 'Inter', Arial, sans-serif; margin: 0; }
+    .v3-page-container { max-width: 800px; margin: 3rem auto; background: #232946; border-radius: 2rem; box-shadow: 0 8px 40px 0 #0005; padding: 2.5rem; }
+    .v3-back-btn { display: inline-block; margin-bottom: 2rem; padding: 0.7rem 1.5rem; border-radius: 1.2rem; border: none; background: #ffb800; color: #232946; font-size: 1rem; font-weight: 600; cursor: pointer; box-shadow: 0 2px 12px 0 #0002; transition: background 0.2s; text-decoration: none; }
+    .v3-back-btn:hover { background: #ffd700; }
+    h1, h2, h3 { color: #ffb800; }
+    ul { margin-left: 1.2rem; }
+  </style>
+</head>
+<body>
+  <div class="v3-page-container">
+    <button class="v3-back-btn" onclick="goBackToProjects()">← Back to Projects</button>
+    <script>
+      function goBackToProjects() {
+        window.location.href = '/public/version-3.html#slideProjects';
+      }
+    </script>
+    <h1>AI Refactor Case Study — Legacy Field Mapper</h1>
+    <h2>Overview</h2>
+    <p>Rebuilt a brittle, carrier-specific insurtech mapping module into a universal data-driven mapper using AI-assisted design and automated test generation.</p>
+    <ul>
+      <li>~80% reduction in mapper code per carrier (190 lines → ~40 lines).</li>
+      <li>Zero field-mapping incidents in 3 months post-refactor.</li>
+      <li>38% faster carrier onboarding — POC time dropped from 4 months to 2.5 months.</li>
+    </ul>
+    <h2>Technical Highlights</h2>
+    <ul>
+      <li>Universal schema mapping with dynamic field resolution</li>
+      <li>Automated test generation for every carrier mapping</li>
+      <li>Integrated legacy XML/SQL data sources</li>
+    </ul>
+    <h2>Lessons Learned</h2>
+    <ul>
+      <li>AI-assisted refactoring can dramatically reduce technical debt</li>
+      <li>Universal mappers improve maintainability and onboarding speed</li>
+    </ul>
+  </div>
+</body>
+</html>
