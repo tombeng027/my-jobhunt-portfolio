@@ -57,21 +57,22 @@ function initVersionSwitch() {
   if (!versionSelect) return
 
   versionSelect.addEventListener('change', () => {
-    const selected = versionSelect.value
+    const selected = versionSelect.value;
+    // Always use root-relative navigation for all versions
     if (selected === 'v1') {
-      window.location.href = './version-1.html'
-      return
+      window.location.href = 'version-1.html';
+      return;
     }
     if (selected === 'v2') {
-      window.location.href = './index.html'
-      return
+      window.location.href = 'index.html';
+      return;
     }
     if (selected === 'v3') {
-      window.location.href = './version-3.html'
-      return
+      window.location.href = 'version-3.html';
+      return;
     }
-    window.location.href = './'
-  })
+    window.location.href = 'index.html';
+  });
 }
 
 function init() {
