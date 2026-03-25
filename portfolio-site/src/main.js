@@ -58,20 +58,21 @@ function initVersionSwitch() {
 
   versionSelect.addEventListener('change', () => {
     const selected = versionSelect.value;
-    // Always use root-relative navigation for all versions
+    // Always use the correct subpath for GitHub Pages deployment
+    const base = '/my-jobhunt-portfolio/';
     if (selected === 'v1') {
-      window.location.href = 'version-1.html';
+      window.location.href = base + 'version-1.html';
       return;
     }
     if (selected === 'v2') {
-      window.location.href = 'index.html';
+      window.location.href = base + 'index.html';
       return;
     }
     if (selected === 'v3') {
-      window.location.href = 'version-3.html';
+      window.location.href = base + 'version-3.html';
       return;
     }
-    window.location.href = 'index.html';
+    window.location.href = base + 'index.html';
   });
 }
 
