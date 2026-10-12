@@ -46,3 +46,11 @@ This release repositioned the portfolio around senior-level, AI-augmented web de
 - Added clear note to v3 Docs that version 2 is the main live version and v3 is in ongoing development.
 - Removed redundant sections from v3 Docs; focused on About and Notes for clarity.
 - Confirmed v2 remains the main entry point for live/production builds.
+
+## 2026-10-12 - QA Automation Portfolio Refresh
+
+- Repositioned the canonical portfolio around QA automation, API testing, and data validation; personal QA projects are separated from professional experience.
+- Version 1 and Version 3 routes now redirect to the canonical portfolio. The prior employer-derived mapper page is a Claude-assisted concept with no production-equivalence or outcome claims.
+- The resume CTA points to the shared Drive document. The placeholder/local PDF is not included in the public build.
+- GitHub Pages serves this project under `/my-jobhunt-portfolio/`. Keep `base: './'` in `portfolio-site/vite.config.js` so Vite-generated entry assets remain relative. Files under `portfolio-site/public/` are copied as-is: use relative links such as `./contact.html` and stable public stylesheets, never root-relative paths or hashed files under `dist/assets/`.
+- Before publishing, run `npm run build` in `portfolio-site`, verify built local links/assets, and test the output under the `/my-jobhunt-portfolio/` prefix.

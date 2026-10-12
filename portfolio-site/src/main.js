@@ -3,7 +3,6 @@ import './style.css'
 const navToggle = document.querySelector('.nav-toggle')
 const navList = document.querySelector('#navList')
 const yearEl = document.querySelector('#year')
-const versionSelect = document.querySelector('#versionSelect')
 const navLinks = navList ? Array.from(navList.querySelectorAll('a')) : []
 const sections = Array.from(document.querySelectorAll('main .section'))
 
@@ -53,29 +52,6 @@ function initSectionObserver() {
   })
 }
 
-function initVersionSwitch() {
-  if (!versionSelect) return
-
-  versionSelect.addEventListener('change', () => {
-    const selected = versionSelect.value;
-    // Always use the correct subpath for GitHub Pages deployment
-    const base = '/my-jobhunt-portfolio/';
-    if (selected === 'v1') {
-      window.location.href = base + 'version-1.html';
-      return;
-    }
-    if (selected === 'v2') {
-      window.location.href = base + 'index.html';
-      return;
-    }
-    if (selected === 'v3') {
-      window.location.href = base + 'version-3.html';
-      return;
-    }
-    window.location.href = base + 'index.html';
-  });
-}
-
 function init() {
   setCurrentYear()
   navToggle?.addEventListener('click', toggleNav)
@@ -85,7 +61,6 @@ function init() {
 
   if (sections[0]) setActiveSection(sections[0].id)
   initSectionObserver()
-  initVersionSwitch()
 }
 
 init()

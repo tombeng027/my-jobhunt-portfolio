@@ -12,22 +12,22 @@
         <p class="eyebrow">Portfolio Project</p>
         <h1>E-commerce Showcase</h1>
         <p>
-          This page demonstrates a front-end e-commerce experience with product filtering,
-          cart management, and checkout summary logic.
+          A front-end catalog demo using the external FakeStore API. Cart and checkout behavior are simulated; no orders or payments are processed.
         </p>
         <a class="back-link" href="./">← Back to Portfolio</a>
       </header>
 
       <section class="feature-strip" aria-label="Features demonstrated">
         <h2>Features Demonstrated</h2>
+        <p>Catalog content comes from FakeStore API, a third-party demo service. Cached results may become stale. No live inventory, orders, or payment processing are connected.</p>
         <ul>
           <li>Live product and category data fetched from the <strong>FakeStore REST API</strong></li>
           <li>Product search and category filters (categories populated dynamically from API)</li>
-          <li>Dynamic product rendering with images, badges, and stock levels</li>
-          <li>Cart quantity controls with stock-limit validation</li>
+          <li>Dynamic product rendering with images and demonstration stock values derived from API rating counts; these are not live inventory</li>
+          <li>Cart quantity controls with demonstration stock-limit validation</li>
           <li>Live subtotal, shipping, and total calculations</li>
           <li>Cart state persistence using localStorage</li>
-          <li>API response cached in localStorage — products and categories load from cache if the API is unavailable</li>
+          <li>API response cached in localStorage — cached products may be stale when the API is unavailable</li>
         </ul>
       </section>
 

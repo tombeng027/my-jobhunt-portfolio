@@ -1,10 +1,10 @@
 import { useMemo, useState } from 'react'
 
 const tabs = [
-  { id: 'rules', label: 'Identity & Rules Engine', note: 'State-specific calculator logic' },
-  { id: 'sync', label: 'Idempotent Sync Lab', note: 'Dirty legacy payload protection' },
-  { id: 'approval', label: 'Role-Based Approval', note: 'Authority-based controls' },
-  { id: 'audit', label: 'Audit Log', note: 'Traceable event history' },
+  { id: 'rules', label: 'Example Rules', note: 'Hard-coded calculator demonstration' },
+  { id: 'sync', label: 'Sync Guardrail Demo', note: 'Sample payload state changes' },
+  { id: 'approval', label: 'Approval UI Demo', note: 'Frontend-only role controls' },
+  { id: 'audit', label: 'Event Log Demo', note: 'In-memory example events' },
 ]
 
 const ruleDefinitions = {
@@ -218,7 +218,7 @@ function buildRulesPreview(stateCode, riderType) {
   return {
     state: stateCode,
     rider: riderType,
-    formulaVersion: `rules-${stateCode.toLowerCase()}-2026.03`,
+    formulaVersion: 'demo-rules-1',
     formula: {
       baseAmount: baseClaimAmount,
       multiplier: riderRules.multiplier,
@@ -227,8 +227,7 @@ function buildRulesPreview(stateCode, riderType) {
       taxRate: stateRules.taxRate,
       totalExpression: '((baseAmount * multiplier) + surcharge + filingFee) * (1 + taxRate)',
     },
-    editableBy: ['Operations analyst', 'Product owner'],
-    redeployRequired: false,
+    demonstrationOnly: true,
   }
 }
 
@@ -328,14 +327,12 @@ function App() {
           <div className="panel-heading">
             <div>
               <p className="panel-kicker">Sprint 1</p>
-              <h2>Identity & Rules Engine</h2>
+              <h2>Example Rule Calculator</h2>
             </div>
-            <span className="audit-pill">Config-backed logic</span>
+              <span className="audit-pill">Hard-coded example rules</span>
           </div>
           <p className="panel-copy">
-            This demo shows how state-specific calculation rules can live in configuration instead of hard-coded branches. When the user
-            changes the state or rider, the active formula preview changes immediately, which is the case-study proof that non-dev teams
-            can update rates without waiting for a redeploy.
+            This client-side simulation uses hard-coded example rules to update the displayed formula when selections change. It does not connect to a live rules service or demonstrate production configuration or deployment behavior.
           </p>
 
           <div className="rules-layout">
@@ -360,7 +357,7 @@ function App() {
               </div>
 
               <div className="calculation-card">
-                <p>Quoted claim amount</p>
+                <p>Example calculated amount</p>
                 <strong>{formatCurrency(calculatedTotal)}</strong>
                 <span>
                   Base {formatCurrency(baseClaimAmount)} x {selectedRiderRules.multiplier} + surcharge {formatCurrency(selectedRiderRules.surcharge)} +
@@ -383,9 +380,9 @@ function App() {
 
         <aside className="scenario-sidebar">
           <article className="metric-card">
-            <p>Case study angle</p>
-            <strong>Logic decoupled from code</strong>
-            <span>Rates and rider math can be changed by ops or product owners without shipping app code.</span>
+            <p>Demo behavior</p>
+            <strong>Local formula preview</strong>
+            <span>Selections update values held in this frontend; no external rules engine is called.</span>
           </article>
           <article className="metric-card">
             <p>Current state</p>
@@ -393,9 +390,9 @@ function App() {
             <span>{riderLabels[selectedRider]} rule set is active in the preview panel.</span>
           </article>
           <article className="metric-card">
-            <p>Business benefit</p>
-            <strong>No redeploy required</strong>
-            <span>That is the exact organizational payoff recruiters should notice.</span>
+            <p>Operational boundary</p>
+            <strong>No live decisioning</strong>
+            <span>Example values are not validated policy, payout, or approval rules.</span>
           </article>
         </aside>
       </section>
@@ -406,7 +403,7 @@ function App() {
           <div className="panel-heading">
             <div>
               <p className="panel-kicker">Sprint 2</p>
-              <h2>Idempotent Sync Lab</h2>
+              <h2>Sync Guardrail Demo</h2>
             </div>
             <button className="primary-action" type="button" onClick={handleSimulateSync}>
               {syncTriggered ? 'Sync Processed' : 'Process Sync'}
@@ -435,7 +432,7 @@ function App() {
 
           <div className="status-banner">
             <span className="status-dot" />
-            <strong>{syncTriggered ? 'Idempotent guardrail active' : 'Configure the legacy payload'}</strong>
+            <strong>{syncTriggered ? 'Simulation guardrail active' : 'Select example fields to remove'}</strong>
             <span>{syncStatus}</span>
           </div>
 
@@ -465,14 +462,14 @@ function App() {
             <span>Protected values glow when the source system tries to erase them.</span>
           </article>
           <article className="metric-card">
-            <p>Case study angle</p>
-            <strong>Maintain data integrity</strong>
-            <span>Even when the source system is unreliable, the sync remains safe and repeatable.</span>
+            <p>Demo result</p>
+            <strong>Example values stay visible</strong>
+            <span>This page updates local React state; it does not run a sync or modify external records.</span>
           </article>
           <article className="metric-card">
-            <p>Why idempotent matters</p>
-            <strong>Repeat runs stay stable</strong>
-            <span>The same broken payload cannot gradually degrade trusted production records.</span>
+            <p>Demo repeatability</p>
+            <strong>Same inputs, same display</strong>
+            <span>Changes are local to this interactive example and do not affect production data.</span>
           </article>
         </aside>
       </section>
@@ -547,9 +544,9 @@ function App() {
             <span>Same claim, different interface state depending on authority level.</span>
           </article>
           <article className="metric-card">
-            <p>Why it matters</p>
-            <strong>Governance by design</strong>
-            <span>The UI makes unsafe approval impossible for the wrong role.</span>
+            <p>Simulation boundary</p>
+            <strong>Client-side role state</strong>
+            <span>Role gating is simulated in this browser and does not provide real authorization.</span>
           </article>
         </aside>
       </section>
@@ -560,13 +557,12 @@ function App() {
           <div className="panel-heading">
             <div>
               <p className="panel-kicker">Scenario 04</p>
-              <h2>Audit Log Visualization</h2>
+              <h2>Example Event Log</h2>
             </div>
-            <span className="audit-pill">Immutable trail</span>
+            <span className="audit-pill">Local example events</span>
           </div>
           <p className="panel-copy">
-            Every protected sync decision and approval event is rendered into a timeline so reviewers can understand what happened, who
-            acted, and why the system allowed or blocked the step.
+            Example events are held in this page's React state. This is not persistent or immutable audit logging and does not record production events.
           </p>
 
           <div className="audit-list">
@@ -603,11 +599,10 @@ function App() {
     <div className="prototype-page">
       <header className="hero-shell">
         <div>
-          <p className="eyebrow">Case Study Prototype • Frontend-only walkthrough</p>
-          <h1>Claims Decisioning Showcase</h1>
+          <p className="eyebrow">Client-side workflow simulation</p>
+          <h1>Claims Workflow Prototype</h1>
           <p className="hero-copy">
-            A recruiter-friendly prototype of the exact product logic I would demo in an insurtech admin platform: config-driven rules,
-            idempotent sync guardrails, threshold approvals, and audit visibility. No backend theater, just the workflow decisions that mattered.
+            Hard-coded example rules, roles, events, and sample payloads illustrate possible interface states. This prototype is not connected to a live claims or employer system and does not make real eligibility, payout, or approval decisions.
           </p>
         </div>
         <div className="hero-actions">
@@ -620,8 +615,8 @@ function App() {
               <strong>4</strong>
             </div>
             <div>
-              <span>Focus</span>
-              <strong>Logic over backend</strong>
+                <span>Boundary</span>
+                <strong>Local UI simulation</strong>
             </div>
           </div>
         </div>

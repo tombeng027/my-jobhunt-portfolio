@@ -3,37 +3,62 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Case Studies • Norbert Briones</title>
+    <title>Personal QA Projects &amp; Demos • Norbert Briones</title>
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <link rel="stylesheet" href="./case-studies.css" />
   </head>
   <body>
     <main class="showcase">
       <header class="hero">
-        <p class="eyebrow">Portfolio Proof • Case Studies</p>
-        <h1>Case Studies</h1>
+        <p class="eyebrow">Personal QA Projects</p>
+        <h1>Testing Projects &amp; Demos</h1>
         <p>
-          A shortlist of delivery-focused case studies that show process, execution, and measurable outcomes.
+          Personal learning projects, kept separate from professional experience and employer systems.
         </p>
         <a class="back-link" href="./">← Back to Portfolio</a>
       </header>
 
-      <section class="cases" aria-label="Case studies list">
+      <section class="cases" aria-label="Personal QA projects">
         <article class="case-card">
-          <h2>AI Refactor Case Study — Legacy Field Mapper</h2>
+          <h2>Playwright Python UI/API Test Framework</h2>
           <p>
-            Rebuilt a brittle, carrier-specific mapper into a universal data-driven workflow using AI-assisted design and testing.
+            A personal, AI-assisted project that tests a local synthetic work-order app through its UI and API, including negative and boundary scenarios. Not employer work or a production service.
           </p>
-          <a class="case-link" href="./ai-refactor-showcase.html">View Case Study</a>
+          <a class="case-link" href="https://github.com/tombeng027/playwright-pytest-ui-api-framework" target="_blank" rel="noreferrer">Repository</a>
+          <a class="case-link" href="https://github.com/tombeng027/playwright-pytest-ui-api-framework/actions/runs/37889708047" target="_blank" rel="noreferrer">Windows/Ubuntu CI</a>
         </article>
 
-        <article class="case-card case-card-featured" aria-label="Insurtech prototype case study">
-          <span class="status-chip">Interactive prototype</span>
-          <h2>Insurtech Claims Decisioning Prototype</h2>
+        <article class="case-card">
+          <h2>API Contract Testing Suite</h2>
           <p>
-            A frontend-only walkthrough of guarded data sync, manager-threshold approval logic, and audit visibility for claims operations.
+            A personal, AI-assisted learning project using a read-only synthetic FastAPI catalog, independent JSON Schema contracts, exact-value assertions, and compatibility examples. No production readiness or mastery claim.
           </p>
-          <a class="case-link" href="./insurtech-prototype.html">Open Prototype</a>
+          <a class="case-link" href="https://github.com/tombeng027/api-contract-testing-suite" target="_blank" rel="noreferrer">Repository</a>
+          <a class="case-link" href="https://github.com/tombeng027/api-contract-testing-suite/actions/runs/38187475729" target="_blank" rel="noreferrer">Full-suite CI</a>
+        </article>
+      </section>
+
+      <section class="cases" aria-label="Secondary demonstrations">
+        <article class="case-card case-card-featured">
+          <span class="status-chip">Client-side simulation</span>
+          <h2>Claims Workflow Prototype</h2>
+          <p>Hard-coded rule examples and sample payloads demonstrate UI states only; the prototype is not connected to a live claims system and does not make real decisions.</p>
+          <a class="case-link" href="./insurtech-prototype.html">Open Demo</a>
+        </article>
+        <article class="case-card">
+          <h2>E-commerce UI/API Demo</h2>
+          <p>Uses the third-party FakeStore API for catalog data. Cart and checkout are simulated; stock figures are demonstration values, not inventory.</p>
+          <a class="case-link" href="./ecommerce-showcase.html">Open Demo</a>
+        </article>
+        <article class="case-card">
+          <h2>Insurtech Field-Mapping Concept</h2>
+          <p>Claude-assisted conceptual exercise from high-level work-history context. It is not a completed employer implementation and makes no production-equivalence or outcome claims.</p>
+          <a class="case-link" href="./ai-refactor-showcase.html">View Concept</a>
+        </article>
+        <article class="case-card">
+          <h2>Personal Project Archive</h2>
+          <p>A small archive limited to a public personal game repository.</p>
+          <a class="case-link" href="./old-software-showcase.html">View Archive</a>
         </article>
       </section>
     </main>

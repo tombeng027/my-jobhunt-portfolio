@@ -154,6 +154,24 @@ ul {
   gap: 10px;
 }
 
+.sidebar-more {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+}
+
+.sidebar-more a {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+}
+
+.sidebar-more a:hover {
+  color: var(--heading);
+}
+
 .button {
   border: 1px solid var(--border);
   color: var(--accent);
@@ -366,6 +384,13 @@ ul {
 .section {
   margin-bottom: 86px;
   scroll-margin-top: 40px;
+}
+
+.page-title {
+  margin-bottom: 22px;
+  color: var(--heading);
+  font-size: 1.4rem;
+  line-height: 1.25;
 }
 
 h2 {
@@ -581,6 +606,10 @@ h2 {
 
   .sidebar-actions {
     margin-top: 22px;
+  }
+
+  .sidebar-more {
+    margin-top: 12px;
   }
 
   .socials {
