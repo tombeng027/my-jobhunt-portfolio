@@ -15,7 +15,12 @@ const checkoutNote = document.querySelector('#checkoutNote')
 
 const STORAGE_KEY = 'portfolio.ecommerce.cart'
 const PRODUCTS_CACHE_KEY = 'portfolio.ecommerce.products_cache'
+const HTML_ENTITIES = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }
 const cart = new Map()
+
+function escapeHtml(value) {
+  return String(value).replace(/[&<>"']/g, (character) => HTML_ENTITIES[character])
+}
 
 function formatCurrency(value) {
   return new Intl.NumberFormat('en-US', {
@@ -67,17 +72,17 @@ function renderProducts() {
       (item) => `
       <article class="product-card">
         <div class="product-image-wrap">
-          <img class="product-image" src="${item.image}" alt="${item.name}" loading="lazy" />
+          <img class="product-image" src="${escapeHtml(item.image)}" alt="${escapeHtml(item.name)}" loading="lazy" />
         </div>
-        <p class="product-category">${item.category}</p>
-        <h3>${item.name}</h3>
-        <p class="product-description">${item.description}</p>
+        <p class="product-category">${escapeHtml(item.category)}</p>
+        <h3>${escapeHtml(item.name)}</h3>
+        <p class="product-description">${escapeHtml(item.description)}</p>
         <div class="meta">
           <span>${formatCurrency(item.price)}</span>
-          <span>${item.badge}</span>
+          <span>${escapeHtml(item.badge)}</span>
         </div>
-        <p class="stock-note">Stock: ${item.stock}</p>
-        <button type="button" class="add-button" data-product-id="${item.id}">Add to Cart</button>
+        <p class="stock-note">Demo stock value: ${item.stock}</p>
+        <button type="button" class="add-button" data-product-id="${escapeHtml(item.id)}">Add to Cart</button>
       </article>
     `,
     )
@@ -147,13 +152,13 @@ function renderCart() {
       return `
         <div class="cart-item">
           <div>
-            <p class="cart-item-name">${item.name}</p>
+            <p class="cart-item-name">${escapeHtml(item.name)}</p>
             <p class="cart-item-price">${formatCurrency(item.price)}</p>
           </div>
           <div class="qty-controls">
-            <button type="button" class="qty-button" data-action="decrease" data-product-id="${item.id}">−</button>
+            <button type="button" class="qty-button" data-action="decrease" data-product-id="${escapeHtml(item.id)}">−</button>
             <span>${quantity}</span>
-            <button type="button" class="qty-button" data-action="increase" data-product-id="${item.id}">+</button>
+            <button type="button" class="qty-button" data-action="increase" data-product-id="${escapeHtml(item.id)}">+</button>
           </div>
         </div>
       `
@@ -269,7 +274,7 @@ function mapProduct(raw) {
     description,
     price: raw.price,
     image: raw.image,
-    badge: stock <= 3 ? 'Limited stock' : 'In stock',
+    badge: stock <= 3 ? 'Demo: low' : 'Demo: available',
     stock,
   }
 }
