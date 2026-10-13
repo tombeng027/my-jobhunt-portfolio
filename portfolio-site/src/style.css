@@ -485,6 +485,30 @@ h2 {
   letter-spacing: 0.06em;
 }
 
+.additional-demo-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 18px;
+  margin-top: 16px;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.additional-demo-links a {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: rgba(245, 245, 246, 0.48);
+  text-underline-offset: 3px;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.additional-demo-links a:hover,
+.additional-demo-links a:focus-visible {
+  color: var(--heading);
+  text-decoration-color: var(--accent);
+}
+
 .project-card ul {
   margin-top: 10px;
   padding-left: 18px;
