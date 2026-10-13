@@ -3,25 +3,70 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Personal Project Archive • Norbert Briones</title>
+    <meta name="description" content="Personal projects exploring desktop video editing, agentic AI, collaborative rich text editing, and an early trainee exercise." />
+    <title>Personal Projects &amp; Hobbies • Norbert Briones</title>
     <link rel="stylesheet" href="./old-software-showcase.css" />
   </head>
   <body>
     <main class="showcase">
       <header class="hero">
-        <p class="eyebrow">Personal Project Archive</p>
-        <h1>Solitaire Game</h1>
-        <p>This archive is limited to a public personal project repository.</p>
+        <p class="eyebrow">Personal Projects</p>
+        <h1>Projects &amp; Hobbies</h1>
+        <p>Independent projects where I explore video editing, agentic AI, and modular application development.</p>
         <a class="back-link" href="./index.html">Back to Portfolio</a>
       </header>
 
-      <section class="projects" aria-label="Public personal project">
+      <section class="projects" aria-label="Personal projects and learning experiments">
         <article class="project-card">
-          <h2 class="project-title">Solitaire Game</h2>
-          <p>A personal browser game repository retained as an early example of interactive UI and game-flow code.</p>
+          <h2 class="project-title">Video Editor Prototype</h2>
+          <p>A Windows-first, open-source desktop video editor prototype. The current documented milestone supports project save/open, proxy preview, timeline split/delete, and MP4 export. Local Ollama assistance and CLIP-based jump-cut candidates are planned, not implemented.</p>
+          <div class="meta">
+            <span>Personal project</span>
+            <span>Apache-2.0</span>
+            <span>Prototype in development</span>
+          </div>
           <div class="project-actions">
-            <a class="project-link" href="https://tombeng027.github.io/Solitaire/" target="_blank" rel="noreferrer">Launch Game</a>
-            <a class="project-link secondary" href="https://github.com/tombeng027/Solitaire" target="_blank" rel="noreferrer">View Repository</a>
+            <a class="project-link" href="https://github.com/tombeng027/video-editor-prototype" target="_blank" rel="noopener noreferrer">View Repository</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <h2 class="project-title">NPC Dialogue Lab</h2>
+          <p>A personal learning project for agentic AI and modular development, exploring configurable NPC profiles, LLM-driven conversations, and context-aware quests connected to world events.</p>
+          <div class="meta">
+            <span>Personal learning project</span>
+            <span>Ollama default · OpenAI optional</span>
+            <span>Local/demo use</span>
+          </div>
+          <p>The current app keeps state in memory, which resets when the server restarts; it has no authentication and is not presented as a hosted service.</p>
+          <div class="project-actions">
+            <a class="project-link" href="https://github.com/tombeng027/npc-dialogue-lab" target="_blank" rel="noopener noreferrer">View Repository</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <h2 class="project-title">Paperwork Editor</h2>
+          <p>A personal full-stack project exploring collaborative rich-text editing with React, TypeScript, Tiptap, and Supabase.</p>
+          <div class="meta">
+            <span>Personal project</span>
+            <span>React · TypeScript · Supabase</span>
+            <span>Supabase setup required</span>
+          </div>
+          <p>No public demo is linked here; running the app requires a configured Supabase project.</p>
+          <div class="project-actions">
+            <a class="project-link" href="https://github.com/tombeng027/paperwork-editor" target="_blank" rel="noopener noreferrer">View Repository</a>
+          </div>
+        </article>
+
+        <article class="project-card project-placeholder">
+          <h2 class="project-title">Solitaire · Trainee Exercise</h2>
+          <p>A game project assigned during my programmer trainee period, before moving into a junior programmer role. I kept the repository as a memento and have not meaningfully updated it in several years; it is an early-career snapshot, not a sample of my current code.</p>
+          <div class="meta">
+            <span>Historical learning exercise</span>
+            <span>Not recently maintained</span>
+          </div>
+          <div class="project-actions">
+            <a class="project-link secondary" href="https://github.com/tombeng027/NB-Solitaire" target="_blank" rel="noopener noreferrer">View Repository</a>
           </div>
         </article>
       </section>
