@@ -1,5 +1,12 @@
 # Patch Notes
 
+## 2026-10-28 - Narrated QA Demo Link
+
+- Updated the Playwright project demo button to the new 70-second narrated YouTube video: https://youtu.be/n_3KRJ0FQnQ.
+- Updated the button text and accessible label to identify the narrated version.
+- No links were added to the separate Upwork-safe portfolios, which had no existing demo reference to replace.
+- This content-only update uses the existing committed deployment workflow; unrelated local workflow and dependency changes are excluded.
+
 ## 2026-03-17 - Portfolio Repositioning Release
 
 ### Summary
